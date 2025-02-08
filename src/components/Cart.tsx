@@ -1,36 +1,31 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Github, Linkedin, Mail, Twitter, Globe } from "lucide-react"
+import { Github, Linkedin, Globe } from "lucide-react"
 import type React from "react" // Added import for React
-
+import { motion } from "framer-motion"
 export default function Cart() {
     return (
         <div className="max-w-sm mx-auto p-2">
+            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="rounded-xl p-6 flex flex-col items-center space-y-4">
                 {/* Profile Image Container */}
-                <div className="relative w-80 h-80 rounded-full ring-4 ring-teal-400/20 overflow-hidden">
+                <div className="relative w-96 h-96 rounded-full ring-4 ring-bg-gradient-to-r from-blue-400 to-green-600  overflow-hidden">
                     <Image
-                        src="/fondo.jpg"
+                        src="/ponencia-02.jpg"
                         alt="Profile picture"
                         fill
                         className="object-cover"
                     />
                 </div>
 
-                {/* Name and Title */}
-                <div className="text-center space-y-2">
-                    <h2 className="text-2xl font-bold text-white">Carlos Calderon Vega</h2>
-                </div>
-
                 {/* Social Links */}
-                <div className="flex space-x-4">
-                    <SocialLink href="https://github.com" icon={<Github />} />
-                    <SocialLink href="https://linkedin.com" icon={<Linkedin />} />
-                    <SocialLink href="https://twitter.com" icon={<Twitter />} />
-                    <SocialLink href="mailto:email@example.com" icon={<Mail />} />
-                    <SocialLink href="https://yourwebsite.com" icon={<Globe />} />
+                <div className="relative flex space-x-4">
+                    <SocialLink href="https://github.com/Carloscv200313" icon={<Github />} />
+                    <SocialLink href="https://www.linkedin.com/in/carlos-sebastian-calderon-vega-0a2586285/" icon={<Linkedin />} />
+                    <SocialLink href="https://carlos-calderon.vercel.app/" icon={<Globe />} />
                 </div>
             </div>
+            </motion.div>
         </div>
     )
 }
