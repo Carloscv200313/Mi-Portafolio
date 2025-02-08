@@ -1,5 +1,6 @@
 "use client"
 
+import { TextAnimate } from "@/components/magicui/text-animate";
 import { motion } from "framer-motion"
 import { achievements } from "@/../types/achievement"
 import { Card, CardContent } from "@/components/ui/card"
@@ -17,7 +18,10 @@ const iconMap = {
 export default function Achievements() {
   return (
 <div className="container mx-auto px-4 py-8 bg-transparent text-text-primary">
-      <h2 className="text-3xl font-bold mb-6 text-center text-accent-blue">Logros y Participaciones</h2>
+          <TextAnimate animation="slideLeft" by="character" 
+                className="lg:text-5xl font-bold mb-10 text-center text-accent-blue">
+          Logros y Participaciones
+          </TextAnimate>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {achievements.map((achievement, index) => (

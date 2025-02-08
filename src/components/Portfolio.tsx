@@ -8,9 +8,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
+import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image"
 
-const categories: ProjectCategory[] = ["frontend", "backend", "fullstack"]
+const categories: ProjectCategory[] = ["Frontend", "Backend", "Fullstack"]
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
@@ -20,8 +21,10 @@ export default function Portfolio() {
 
   return (
     <div className="container mx-auto px-4 py-8 bg-transparent text-text-primary">
-    <h2 className="text-3xl font-bold mb-6 text-center text-accent-blue">Mis Proyectos</h2>
-
+    <TextAnimate animation="slideLeft" by="character" 
+          className="text-4xl lg:text-7xl font-bold mb-10 text-center text-accent-blue">
+      Mis Proyectos
+    </TextAnimate>
     <div className="flex justify-center space-x-4 mb-8">
       <Button
         variant={filter === "all" ? "default" : "outline"}
@@ -69,7 +72,7 @@ export default function Portfolio() {
                   alt={project.title}
                   height={300}
                   width={600}
-                  className="w-full h-48 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110"
+                  className="w-full h-64 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110"
                 />
                 <h3 className="text-xl font-semibold mb-2 text-accent-blue">{project.title}</h3>
                 <p className="text-sm text-text-secondary line-clamp-2">{project.description}</p>
@@ -83,7 +86,7 @@ export default function Portfolio() {
 
     <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
       {selectedProject && (
-        <DialogContent className="sm:max-w-[425px] bg-bg-light text-text-primary border-text-secondary">
+        <DialogContent className="max-w-[340px] md:max-w-[500px] max-h-[calc(100vh-30px)] overflow-y-auto bg-bg-light text-text-primary border-text-secondary">
           <DialogHeader>
             <DialogTitle className="text-accent-blue">{selectedProject.title}</DialogTitle>
           </DialogHeader>
@@ -100,13 +103,12 @@ export default function Portfolio() {
               <Badge
                 key={lang}
                 variant="secondary"
-                className="bg-gradient-primary from-blue-start to-green-end text-bg-dark"
+                className="bg-gradient-to-r from-blue-400 to-green-600 text-bg-dark"
               >
                 {lang}
               </Badge>
             ))}
           </div>
-          <Badge className="mb-4 bg-accent-green text-bg-dark">{selectedProject.category}</Badge>
           <Button
             asChild
             className="w-full bg-accent-blue text-bg-dark hover:bg-accent-green transition-colors duration-300"

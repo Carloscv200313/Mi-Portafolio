@@ -131,7 +131,7 @@ export const SparklesCore = ({
       className={className}
       style={{
         background,
-        width: dimensions.width,
+        width: dimensions.width -20,
         height: dimensions.height,
       }}
     />
