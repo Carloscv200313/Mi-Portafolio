@@ -11,7 +11,7 @@ export default function Hero() {
     <div className="relative min-h-[calc(100vh-85px)]  flex items-center ">
       {/* Floating icons background */}
       <div className="absolute inset-0 overflow-hidden">
-        <FloatingPaper count={5} />
+        <FloatingPaper count={10} />
       </div>
       <div className="w-full flex md:flex-row flex-col ">
         {/* Primera columna */}
