@@ -19,8 +19,8 @@ export default function Navbar() {
 
       <div className="hidden md:flex items-center space-x-10 text-xl">
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/projects">Proyectos</NavLink>
-        <NavLink href="/contact">Contacto</NavLink>
+        <NavLink href="/Proyectos">Proyectos</NavLink>
+        <NavLink href="/Contact">Contacto</NavLink>
       </div>
 
       <Button variant="ghost" size="icon" className="md:hidden text-white">

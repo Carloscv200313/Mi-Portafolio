@@ -5,11 +5,11 @@ import type React from "react" // Added import for React
 import { motion } from "framer-motion"
 export default function Cart() {
     return (
-        <div className="max-w-sm mx-auto p-2">
+        <div className="w-full p-2">
             <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="rounded-xl p-6 flex flex-col items-center space-y-4">
                 {/* Profile Image Container */}
-                <div className="relative w-96 h-96 rounded-full ring-4 ring-bg-gradient-to-r from-blue-400 to-green-600  overflow-hidden">
+                <div className="relative w-52 h-52 md:w-64 md:h-64 lg:w-96 lg:h-96 rounded-full ring-4 ring-blue-600  overflow-hidden">
                     <Image
                         src="/fotoPrincipal.jpg"
                         alt="Profile picture"
