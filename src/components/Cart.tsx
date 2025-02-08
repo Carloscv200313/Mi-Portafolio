@@ -11,7 +11,7 @@ export default function Cart() {
                 {/* Profile Image Container */}
                 <div className="relative w-96 h-96 rounded-full ring-4 ring-bg-gradient-to-r from-blue-400 to-green-600  overflow-hidden">
                     <Image
-                        src="/ponencia-02.jpg"
+                        src="/fotoPrincipal.jpg"
                         alt="Profile picture"
                         fill
                         className="object-cover"
