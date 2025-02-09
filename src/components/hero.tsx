@@ -41,7 +41,7 @@ export default function Hero() {
                     sino que también sorprendan. Desarrollo sistemas eficientes que hagan la tecnología sea más accesible y sencilla de usar. Siempre busco innovar, 
                     encontrar soluciones diferentes y convertir ideas en productos reales que generen impacto. 🚀
                   </p>
-                  <div className="grid grid-cols-2 text-left">
+                  <div className="grid grid-cols-2 gap-4 text-left">
                     <div>
                       <h3 className="text-xl font-semibold text-blue-400">🖥️ Frontend</h3>
                       <ul className="list-disc list-inside text-gray-300">

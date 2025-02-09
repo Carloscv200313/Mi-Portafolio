@@ -13,10 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-black/[0.98] antialiased bg-grid-white/[0.02] relative  ">
-        <div className="relative z-10">
+        <div className="relative">
           <Navbar />
         </div>
-        
         {children}
       </body>
     </html>

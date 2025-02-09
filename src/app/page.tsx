@@ -4,7 +4,7 @@ import Portfolio from "@/components/Portfolio";
 import { SparklesCore } from "@/components/sparkles"
 export default function Home() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden md:pt-16">
       <div className="absolute inset-0 z-0">
         <SparklesCore
           id="tsparticlesfullpage "
