@@ -22,7 +22,7 @@ export const SparklesCore = ({
   particleColor = "#FFFFFF",
 }: SparklesProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 })
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
     if (typeof window === "undefined") return
