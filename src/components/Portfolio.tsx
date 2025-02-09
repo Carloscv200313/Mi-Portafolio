@@ -88,7 +88,7 @@ export default function Portfolio() {
 
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
         {selectedProject && (
-          <DialogContent className="max-w-[340px] md:max-w-[500px] max-h-[calc(100vh-70px)] overflow-y-auto bg-bg-light text-text-primary border-text-secondary">
+          <DialogContent className="max-w-[340px] md:max-w-[500px] max-h-[90vh] overflow-y-auto bg-bg-light text-text-primary border-text-secondary">
             <DialogHeader>
               <DialogTitle className="text-accent-blue">{selectedProject.title}</DialogTitle>
             </DialogHeader>

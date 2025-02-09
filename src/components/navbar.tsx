@@ -19,7 +19,7 @@ export default function Navbar() {
     >
       <Link href="/" className="flex items-center space-x-2" >
         <Laptop className="w-8 h-8 text-blue-500" />
-        <span className="text-white font-medium text-xl">DevOps</span>
+        <span className="text-white font-medium text-2xl">DevOps</span>
       </Link>
 
       <div className="hidden md:flex items-center space-x-10 text-xl text-gray-300 transition-colors">

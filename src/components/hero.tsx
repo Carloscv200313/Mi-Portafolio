@@ -37,8 +37,9 @@ export default function Hero() {
                 <div className="text-white text-start max-w-3xl mx-auto space-y-4  mb-6 text-sm  lg:text-lg px-4 lg:px-10 font-sans">
                   <p className="text-lg">
                     Soy estudiante de sexto ciclo de <strong>Ingeniería de Sistemas</strong> y un apasionado desarrollador
-                    <span className="text-blue-400 font-semibold"> Full Stack</span> 💻. Me encanta crear
-                    <strong> aplicaciones web dinámicas</strong> y optimizadas, combinando un diseño atractivo con un backend eficiente 🚀.
+                    <span className="text-blue-400 font-semibold"> Full Stack</span> 💻. Me gusta crear experiencias digitales que no solo funcionen bien, 
+                    sino que también sorprendan. Desarrollo sistemas eficientes que hagan la tecnología sea más accesible y sencilla de usar. Siempre busco innovar, 
+                    encontrar soluciones diferentes y convertir ideas en productos reales que generen impacto. 🚀
                   </p>
                   <div className="grid grid-cols-2 text-left">
                     <div>
