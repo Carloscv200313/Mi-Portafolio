@@ -1,6 +1,5 @@
 "use client"
-import { Button } from "@/components/ui/button"
-import { Laptop, Menu } from "lucide-react"
+import { Laptop } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import type React from "react"
@@ -39,9 +38,6 @@ export default function Navbar() {
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
       </div>
-      <Button variant="ghost" size="icon" className="md:hidden text-white">
-        <Menu className="w-6 h-6" />
-      </Button>
     </motion.nav>
   )
 }
