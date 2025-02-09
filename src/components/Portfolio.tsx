@@ -49,7 +49,7 @@ export default function Portfolio() {
       ))}
     </div>
 
-    <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" layout>
+    <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4" layout>
       <AnimatePresence>
         {filteredProjects.map((project) => (
           <motion.div
@@ -66,12 +66,12 @@ export default function Portfolio() {
               className="cursor-pointer h-full overflow-hidden bg-bg-light border-text-secondary hover:border-accent-blue transition-colors duration-300"
               onClick={() => setSelectedProject(project)}
             >
-              <CardContent className="p-4">
+              <CardContent className="p-4 ">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  height={300}
-                  width={600}
+                  height={500}
+                  width={1000}
                   className="w-full h-64 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110"
                 />
                 <h3 className="text-xl font-semibold mb-2 text-accent-blue">{project.title}</h3>
@@ -86,7 +86,7 @@ export default function Portfolio() {
 
     <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
       {selectedProject && (
-        <DialogContent className="max-w-[340px] md:max-w-[500px] max-h-[calc(100vh-30px)] overflow-y-auto bg-bg-light text-text-primary border-text-secondary">
+        <DialogContent className="max-w-[340px] md:max-w-[500px] max-h-[calc(100vh-70px)] overflow-y-auto bg-bg-light text-text-primary border-text-secondary">
           <DialogHeader>
             <DialogTitle className="text-accent-blue">{selectedProject.title}</DialogTitle>
           </DialogHeader>

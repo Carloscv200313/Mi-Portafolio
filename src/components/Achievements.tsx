@@ -19,7 +19,7 @@ export default function Achievements() {
   return (
 <div className="container mx-auto px-4 py-8 bg-transparent text-text-primary">
           <TextAnimate animation="slideLeft" by="character" 
-                className="lg:text-5xl font-bold mb-10 text-center text-accent-blue">
+                className="text-4xl lg:text-7xl font-bold mb-10 text-center text-accent-blue">
           Logros y Participaciones
           </TextAnimate>
 
