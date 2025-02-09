@@ -11,13 +11,12 @@ export default function Cart() {
                 {/* Profile Image Container */}
                 <div className="relative w-52 h-52 md:w-64 md:h-64 lg:w-96 lg:h-96 rounded-full ring-4 ring-blue-600  overflow-hidden">
                     <Image
-                        src="/fotoPrincipal.jpg"
+                        src="/fondo.jpg"
                         alt="Profile picture"
                         fill
                         className="object-cover"
                     />
                 </div>
-
                 {/* Social Links */}
                 <div className="relative flex space-x-4">
                     <SocialLink href="https://github.com/Carloscv200313" icon={<Github />} />

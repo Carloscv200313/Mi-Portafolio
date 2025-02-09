@@ -31,9 +31,9 @@ export default function ContactoOscuroMejorado() {
       <Card className="w-full max-w-5xl bg-white/ backdrop-blur-sm text-accent-blue shadow-lg shadow-accent-blue/20">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 p-6 flex items-center justify-center">
-            <div className="relative w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full ring-4 ring-emerald-600  overflow-hidden">
+            <div className="relative w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full ring-4 ring-blue-600  overflow-hidden">
               <Image
-                src="/fotoPrincipal.jpg"
+                src="/fondo.jpg"
                 alt="Profile picture"
                 fill
                 className="object-cover"
