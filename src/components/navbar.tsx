@@ -15,11 +15,11 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className=" flex items-center justify-between px-6 py-6 backdrop-blur-sm border-b border-white/10"
+      className=" flex items-center justify-between px-6 py-6 backdrop-blur-sm border-b border-white/20"
     >
       <Link href="/" className="flex items-center space-x-2" >
         <Laptop className="w-8 h-8 text-blue-500" />
-        <span className="text-white font-medium text-xl">Carlos Calderon</span>
+        <span className="text-white font-medium text-xl">DevOps</span>
       </Link>
 
       <div className="hidden md:flex items-center space-x-10 text-xl text-gray-300 transition-colors">

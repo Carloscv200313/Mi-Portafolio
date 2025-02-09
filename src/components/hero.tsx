@@ -14,28 +14,59 @@ export default function Hero() {
     }
   };
   return (
-    <div className="relative min-h-[calc(100vh-85px)]  flex items-center ">
+    <div className="relative min-h-[calc(100vh-85px)] flex items-center ">
       {/* Floating icons background */}
       <div className="absolute inset-0 overflow-hidden">
         <FloatingPaper count={10} />
       </div>
       <div className="w-full flex md:flex-row flex-col ">
         {/* Primera columna */}
-        <div className="w-full md:w-2/3 lg:w-1/2 container flex items-center justify-center mx-auto px-4 relative z-10 bg-white/ backdrop-blur-sm  rounded-3xl ">
+        <div className="w-full md:w-2/3 lg:w-1/2 container flex items-center justify-center mx-auto px-4 relative z-10  backdrop-blur-sm  rounded-3xl ">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <h1 className="text-5xl md:text:6xl lg:text-7xl xl:text-7xl  font-bold text-white my-6 md:mx-10 mx-2">
-                Desarrollador
+              ¡Hola! Soy
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-600">
                   {" "}
-                  Full Stack
+                  Carlos Calderón
                 </span>
+                <span>👨‍💻</span>
               </h1>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <p className="text-white mb-6 text-start text-sm  lg:text-lg px-4 lg:px-10 font-sans">
-                Hola, mi nombre es Carlos Calderón y soy un estudiante de sexto ciclo de la carrera de Ingeniería de Sistemas y un apasionado programador de páginas web con un enfoque Full Stack. Tengo experiencia en el desarrollo frontend, utilizando HTML, CSS, JavaScript, TypeScript, Tailwind, React, Vue y Next.js. En el backend, trabajo con Node.js y Express, y manejo bases de datos como MongoDB y SQL Server. Además, estoy familiarizado con herramientas de control de versiones como Git. Me motiva crear soluciones completas que mejoren la experiencia del usuario y busco constantemente aprender y aplicar nuevas tecnologías en mis proyectos. Estoy emocionado por las oportunidades que se presenten para seguir creciendo en esta área.
-              </p>
+                <div className="text-white text-start max-w-3xl mx-auto space-y-4  mb-6 text-sm  lg:text-lg px-4 lg:px-10 font-sans">
+                  <p className="text-lg">
+                    Soy estudiante de sexto ciclo de <strong>Ingeniería de Sistemas</strong> y un apasionado desarrollador
+                    <span className="text-blue-400 font-semibold"> Full Stack</span> 💻. Me encanta crear
+                    <strong> aplicaciones web dinámicas</strong> y optimizadas, combinando un diseño atractivo con un backend eficiente 🚀.
+                  </p>
+                  <div className="grid grid-cols-2 text-left">
+                    <div>
+                      <h3 className="text-xl font-semibold text-blue-400">🖥️ Frontend</h3>
+                      <ul className="list-disc list-inside text-gray-300">
+                        <li>HTML, CSS, JavaScript, TypeScript</li>
+                        <li>Tailwind, React, Vue, Next.js</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-blue-400">⚙️ Backend & Bases de Datos</h3>
+                      <ul className="list-disc list-inside text-gray-300">
+                        <li>Node.js, Express</li>
+                        <li>MongoDB, SQL Server</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-blue-400">🛠️ Herramientas & Control de Versiones</h3>
+                    <p className="text-gray-300">Git & GitHub</p>
+                  </div>
+
+                  <p className="text-lg font-semibold text-green-400">
+                    📩 ¡Estoy listo para nuevos desafíos y oportunidades! 😊
+                  </p>
+                </div>
+
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
