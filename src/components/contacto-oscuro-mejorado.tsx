@@ -28,6 +28,18 @@ export default function ContactoOscuroMejorado() {
     <div className="min-h-[90vh] flex items-center justify-center p-4 bg-fixed bg-no-repeat bg-center">
   <div className="relative z-10 w-full px-10 grid md:grid-cols-2 gap-10 h-full items-center justify-center text-white">
     
+    {/* Imagen GIF */}
+    <div className="flex justify-center">
+      <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+        <Image
+          fill
+          unoptimized
+          src="/celular.gif"
+          alt="Contacto"
+          className="object-cover scale-150 rounded-b-full"
+        />
+      </div>
+    </div>
     {/* Formulario */}
     <Card className="bg-transparent backdrop-blur-sm max-w-lg mx-auto">
       <CardHeader>
@@ -82,19 +94,6 @@ export default function ContactoOscuroMejorado() {
         </form>
       </CardContent>
     </Card>
-
-    {/* Imagen GIF */}
-    <div className="flex justify-center">
-      <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-        <Image
-          fill
-          src="/celular.gif"
-          alt="Contacto"
-          className="object-cover scale-125 rounded-b-full"
-        />
-      </div>
-    </div>
-  
   </div>
 </div>
 

@@ -19,9 +19,9 @@ export default function Cart() {
                 </div>
                 {/* Social Links */}
                 <div className="relative flex space-x-4">
-                    <SocialLink href="https://github.com/Carloscv200313" icon={<Github />} />
-                    <SocialLink href="https://www.linkedin.com/in/carlos-sebastian-calderon-vega-0a2586285/" icon={<Linkedin />} />
-                    <SocialLink href="https://carlos-calderon.vercel.app/" icon={<Globe />} />
+                    <SocialLink href="https://github.com/Carloscv200313" icon={<Github className="h-8 w-8" />} />
+                    <SocialLink href="https://www.linkedin.com/in/carlos-sebastian-calderon-vega-0a2586285/" icon={<Linkedin className="h-8 w-8" />} />
+                    <SocialLink href="https://carlos-calderon.vercel.app/" icon={<Globe  className="h-8 w-8"/>} />
                 </div>
             </div>
         </motion.div>
@@ -37,7 +37,7 @@ function SocialLink({ href, icon }: SocialLinkProps) {
     return (
         <Link
             href={href}
-            className="p-2 text-zinc-400 hover:text-teal-400 transition-colors"
+            className="p-2  hover:text-blue-600 transition-colors text-white "
             target="_blank"
             rel="noopener noreferrer"
         >
