@@ -44,7 +44,7 @@ export default function SobreMi() {
                             {/* Header Section */}
                             <motion.div className="space-y-4" {...fadeIn}>
                                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                                    Sobre Mí 
+                                    Sobre Mí
                                 </h1>
                                 <p className="md:text-base lg:text-lg text-sm text-gray-300 leading-relaxed">
                                     Soy estudiante de sexto ciclo de{" "}
