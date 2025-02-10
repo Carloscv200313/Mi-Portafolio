@@ -80,7 +80,7 @@ export const projects: Project[] = [
     id: "8",
     title: "Catalogo Virtual",
     description: "💳 Proyecto desarrollado para explorar y comprender el funcionamiento de las pasarelas de pago 🏦💰. En este caso, se utilizó PayPal 🅿️ mediante su propia librería oficial, permitiendo realizar pagos directos de forma sencilla y segura ✅. Este proyecto surgió como una idea para su futura implementación en un sistema de eCommerce 🛒📦. Actualmente, el sistema se encuentra en pausa ⏸️ para evitar que las transacciones procesadas se reflejen en mi cuenta. Sin embargo, con un pequeño ajuste en el código 🖥️, puede activarse nuevamente y operar sin inconvenientes. 🚀",
-    image: "/Catalogo.png",
+    image: "/Catalogo.jpg",
     languages: ["React.js", "TypeScript", "Tailwind"],
     url: "https://tienda-virtual-zeta.vercel.app/",
     category: "Frontend",

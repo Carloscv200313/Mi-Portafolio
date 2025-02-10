@@ -8,7 +8,7 @@ import { SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiMongodb, SiDocker } fro
 const icons = [Database, Server, Laptop, Code, Globe, Cloud, SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiMongodb, SiDocker]
 
 export function FloatingPaper ({ count = 10 }) {
-  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 })
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
     setDimensions({

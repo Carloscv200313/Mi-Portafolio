@@ -72,9 +72,9 @@ export default function Portfolio() {
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    height={500}
-                    width={1000}
-                    className="w-full h-64 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110"
+                    height={900}
+                    width={460}
+                    className="w-full h-36 lg:h-56 object-cover rounded-xl mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110"
                   />
                   <h3 className="text-xl font-semibold mb-2 text-accent-blue">{project.title}</h3>
                   <p className="text-sm text-text-secondary line-clamp-2">{project.description}</p>
@@ -95,9 +95,9 @@ export default function Portfolio() {
             <Image
               src={selectedProject.image || "/placeholder.svg"}
               alt={selectedProject.title}
-              height={300}
-              width={500}
-              className="w-full h-56 object-cover rounded-md mb-4"
+              height={900}
+              width={460}
+              className="w-full h-36 lg:h-56 object-cover rounded-md mb-4"
             />
             <DialogDescription className="text-text-secondary">{selectedProject.description}</DialogDescription>
             <div className="flex flex-wrap gap-2 my-4">

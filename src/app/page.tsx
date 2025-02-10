@@ -1,6 +1,7 @@
 import ContactoOscuroMejorado from "@/components/contacto-oscuro-mejorado";
 import Hero from "@/components/hero";
 import Portfolio from "@/components/Portfolio";
+import SobreMi from "@/components/SobreMi";
 import { SparklesCore } from "@/components/sparkles"
 export default function Home() {
   return (
@@ -21,7 +22,9 @@ export default function Home() {
         <section id="hero">
           <Hero />
         </section>
-
+        <section id="sobremi" className="py-12">
+          <SobreMi/>
+        </section>
         {/* Sección Portfolio */}
         <section id="portfolio" className="py-12">
           <Portfolio />
