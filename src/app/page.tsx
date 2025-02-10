@@ -22,7 +22,7 @@ export default function Home() {
         <section id="hero">
           <Hero />
         </section>
-        <section id="sobremi" className="py-12">
+        <section id="about" className="py-12">
           <SobreMi/>
         </section>
         {/* Sección Portfolio */}

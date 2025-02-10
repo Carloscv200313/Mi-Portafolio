@@ -47,7 +47,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 1 }}
                 className="text-gray-400 text-sm  lg:text-lg  md:max-w-7xl max-w-xl"
               >
-                Como desarrollador Full Stack en Perú, creo aplicaciones web completas, desde interfaces atractivas hasta sistemas eficientes en el backend, optimizando rendimiento y usabilidad
+                Actualmente recido en Perú, creo aplicaciones web completas, desde interfaces atractivas hasta sistemas eficientes en el backend, optimizando rendimiento y usabilidad
               </motion.p>
             </div>
             <motion.div

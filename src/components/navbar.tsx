@@ -29,6 +29,11 @@ export default function Navbar() {
         </div>
 
         <div className="relative group">
+          <button onClick={() => scrollToSection("about")} className="hover:text-white">About</button>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
+        </div>
+
+        <div className="relative group">
           <button onClick={() => scrollToSection("portfolio")} className="hover:text-white">Proyectos</button>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
