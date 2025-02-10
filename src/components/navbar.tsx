@@ -24,12 +24,12 @@ export default function Navbar() {
 
       <div className="hidden md:flex items-center space-x-10 text-xl text-gray-300 transition-colors">
         <div className="relative group">
-          <button onClick={() => scrollToSection("hero")} className="hover:text-white">Home</button>
+          <button onClick={() => scrollToSection("hero")} className="hover:text-white">Inicio</button>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
 
         <div className="relative group">
-          <button onClick={() => scrollToSection("about")} className="hover:text-white">About</button>
+          <button onClick={() => scrollToSection("about")} className="hover:text-white">Sobre Mi</button>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
 

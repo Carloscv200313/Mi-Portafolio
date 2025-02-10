@@ -20,7 +20,7 @@ export default function Portfolio() {
   const filteredProjects = projects.filter((project) => filter === "all" || project.category === filter)
 
   return (
-    <div className="container mx-auto px-4 py-0 bg-transparent text-text-primary">
+    <div className="container mx-auto px-4 py-0 bg-transparent text-text-primary relative z-10">
       <TextAnimate animation="slideLeft" by="character"
         className="text-4xl lg:text-7xl font-bold mb-10 text-center text-accent-blue">
         Mis Proyectos
