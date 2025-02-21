@@ -11,6 +11,7 @@ export default function Cart() {
                     {/* Imagen de perfil */}
                     <Image
                         src="/robot.gif"
+                        //src="/robotcito.gif" 
                         alt="Profile photo"
                         unoptimized
                         fill
