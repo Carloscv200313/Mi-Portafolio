@@ -16,9 +16,9 @@ export default function Hero() {
 
   return (
     <div className="relative min-h-[calc(100vh-85px)] flex items-center">
-      <div className="w-full flex md:flex-row-reverse flex-col">
+      <div className="w-full flex lg:flex-row-reverse flex-col">
         {/* Primera columna */}
-        <div className="w-full md:w-2/3 lg:w-1/2 container flex items-center justify-center mx-auto px-4 relative z-10 rounded-3xl">
+        <div className="w-full  lg:w-1/2 container flex items-center justify-center mx-auto px-4 relative z-10 rounded-3xl">
           <div className="w-full text-start py-5 md:p-10">
             {/* Animación para "Hola, Soy Carlos" */}
             <motion.h2
@@ -38,7 +38,7 @@ export default function Hero() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: false, amount: 0.2 }}
-                className="text-5xl md:text:6xl lg:text-7xl xl:text-8xl font-bold"
+                className="text-5xl md:text-7xl  xl:text-8xl font-bold"
               >
                 <span className="text-blue-500">Full</span>Stack
                 <br />
@@ -51,7 +51,7 @@ export default function Hero() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
                 viewport={{ once: false, amount: 0.2 }}
-                className="text-gray-400 text-sm lg:text-lg md:max-w-7xl max-w-xl"
+                className="text-gray-400 text-sm md:text-lg md:max-w-7xl max-w-xl"
               >
                 Actualmente resido en Perú, creo aplicaciones web completas, desde interfaces atractivas hasta sistemas eficientes en el backend, optimizando rendimiento y usabilidad.
               </motion.p>
@@ -91,7 +91,7 @@ export default function Hero() {
         </div>
 
         {/* Segunda columna */}
-        <div className="w-full md:w-1/3 lg:w-1/2 flex items-center justify-center">
+        <div className="w-full lg:w-1/2 flex items-center justify-center">
           <Cart />
         </div>
       </div>

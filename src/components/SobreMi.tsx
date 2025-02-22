@@ -15,7 +15,7 @@ export default function SobreMi() {
     }
 
     return (
-        <div className="relative min-h-[50vh] flex flex-wrap items-center justify-center md:px-6">
+        <div className="relative min-h-[50vh] flex flex-wrap items-center justify-center md:px-6 ">
             {/* Floating icons background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <FloatingPaper count={10} />
@@ -31,10 +31,10 @@ export default function SobreMi() {
                     particleColor="#FFFFFF"
                 />
             </div>
-            <div className="relative w-full flex flex-col md:flex-row justify-center md:gap-10  z-10">
+            <div className="relative w-full flex flex-col lg:flex-row justify-center lg:gap-10 z-10 text-center">
                 {/* Primera columna */}
-                <div className="w-full md:w-2/3 lg:w-1/2 flex items-center justify-center mx-auto md:px-4">
-                    <div className="text-white py-16 px-4 sm:px-6 lg:px-8">
+                <div className="w-full  xl:w-1/2 flex items-center justify-center md:px-4 lg:px-0">
+                    <div className="text-white py-16 px-4 sm:px-6 ">
                         <motion.div
                             className="max-w-4xl mx-auto space-y-12"
                             initial={{ opacity: 0 }}
@@ -66,8 +66,8 @@ export default function SobreMi() {
                 </div>
 
                 {/* Segunda columna */}
-                <div className="w-full md:w-1/3 lg:w-1/2 flex items-center justify-center px-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols- gap-6">
+                <div className="w-full   xl:w-1/2 flex items-center justify-center px-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6">
                         {/* Frontend Card */}
                         <motion.div {...fadeIn} transition={{ delay: 0.2 }}>
                             <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/80 transition-colors">
