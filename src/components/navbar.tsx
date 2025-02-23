@@ -15,19 +15,19 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="md:fixed top-0 left-0 w-full z-40 hidden md:flex items-center justify-between px-6 lg:py-2 py-6 bg-black/85 backdrop-blur-sm border-b border-white/20"
+      className="md:fixed top-0 left-0 w-full z-40 flex items-center lg:justify-between justify-center px-6 lg:py-2 py-6 bg-black/85 backdrop-blur-sm border-b border-white/20"
     >
-      <Link href="/" className="flex items-center justify-center" >
+      <Link href="/" className="lg:flex hidden items-center justify-center" >
         <Image 
           alt="iamge"
           src={"/icono.png"}
           height={80}
           width={360}
-          className="object-cover w-auto h-16 lg:flex hidden"
+          className="object-cover w-auto h-16 "
         />
       </Link>
 
-      <div className="hidden md:flex items-center xl:space-x-10 space-x-6 text-xl text-gray-300 transition-colors">
+      <div className="flex items-center md:space-x-10 space-x-6  md:text-xl text-base   text-gray-300 transition-colors">
         <div className="relative group">
           <button onClick={() => scrollToSection("hero")} className="hover:text-white">Inicio</button>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
