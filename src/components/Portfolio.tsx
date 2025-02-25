@@ -70,7 +70,7 @@ export default function Portfolio() {
               >
                 <CardContent className="p-4 ">
                   <Image
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image}
                     alt={project.title}
                     height={460}
                     width={900}
@@ -93,10 +93,10 @@ export default function Portfolio() {
               <DialogTitle className="text-accent-blue">{selectedProject.title}</DialogTitle>
             </DialogHeader>
             <Image
-              src={selectedProject.image || "/placeholder.svg"}
+              src={selectedProject.image}
               alt={selectedProject.title}
-              height={900}
-              width={460}
+              height={460}
+              width={900}
               className="w-full h-36 lg:h-56 object-cover rounded-md mb-4"
             />
             <DialogDescription className="text-text-secondary">{selectedProject.description}</DialogDescription>
