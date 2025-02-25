@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-black/[0.98] antialiased bg-grid-white/[0.02] relative  ">
-        <SplashCursor />
+      <SplashCursor />
         <div className="relative">
           <Navbar />
         </div>

@@ -3,7 +3,7 @@ import Hero from "@/components/hero";
 import Portfolio from "@/components/Portfolio";
 import SobreMi from "@/components/SobreMi";
 import { SparklesCore } from "@/components/sparkles"
-import Publicidad from "@/components/ui/Publicidad";
+//import Publicidad from "@/components/ui/Publicidad";
 export default function Home() {
   return (
     <main className="relative overflow-hidden md:pt-16">
@@ -18,7 +18,7 @@ export default function Home() {
           particleColor="#FFFFFF"
         />
       </div>
-      <Publicidad />
+      {/* <Publicidad />*/}
       <div className="relative z-10">
 
         {/* Sección Hero */}

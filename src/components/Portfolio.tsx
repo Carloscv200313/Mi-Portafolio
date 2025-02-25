@@ -72,8 +72,8 @@ export default function Portfolio() {
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    height={900}
-                    width={460}
+                    height={460}
+                    width={900}
                     className="w-full h-36 lg:h-56 object-cover rounded-xl mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110"
                   />
                   <h3 className="text-xl font-semibold mb-2 text-accent-blue">{project.title}</h3>

@@ -95,4 +95,13 @@ export const projects: Project[] = [
     url: "/",
     category: "Backend",
   },
+  {
+    id: "10",
+    title: "Tic Tac Toe",
+    description: "🎮 He desarrollado un innovador juego de Tic-Tac-Toe Online, donde los jugadores pueden 👤 crear su propio usuario con credenciales seguras, 🎭 controlar un personaje asignado y ⚔️ enfrentarse a otros en combates en tiempo real. 📊 Además, el juego incluye un registro de victorias y derrotas para seguir el progreso de cada usuario. 🚀 Actualmente, sigue en constante mejora con nuevas funciones y optimizaciones para ofrecer la mejor experiencia posible. ¡Un clásico reinventado para desafiar tu estrategia! 🧠🔥",
+    image: "/michi.jpg",
+    languages: ["React.js", "Node.js", "Tailwind","Socket.io","Express"],
+    url: "https://juegomichi.netlify.app",
+    category: "Fullstack",
+  },
 ]
