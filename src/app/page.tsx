@@ -1,4 +1,5 @@
 import ContactoOscuroMejorado from "@/components/contacto-oscuro-mejorado";
+import SplashCursor from "@/components/Efecto";
 import Hero from "@/components/hero";
 import { Imagen3D } from "@/components/Imagen3D";
 import Portfolio from "@/components/Portfolio";
@@ -19,6 +20,7 @@ export default function Home() {
           particleColor="#FFFFFF"
         />
       </div>
+      <SplashCursor/>
       {/* <Publicidad />*/}
       <div className="relative z-10">
         {/* Sección Hero */}

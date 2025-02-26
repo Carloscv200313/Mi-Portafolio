@@ -42,39 +42,39 @@ export default function SobreMi() {
                         >
                             {/* Encabezado */}
                             <motion.div className="space-y-4" {...fadeIn}>
-                                <h1 className="mb-10 text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-red-600">
+                                <h1 className="mb-10 text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 via-sky-400 to-red-950">
                                     Sobre Mí
                                 </h1>
-                                <p className="md:text-base lg:text-lg lg:text-start  text-sm text-white leading-relaxed">
+                                <p className="md:text-base lg:text-lg lg:text-start  text-sm leading-relaxed">
                                     Soy estudiante de sexto ciclo de{" "}
-                                    <span className="font-semibold text-yellow-400">
+                                    <span className="font-semibold text-blue-400">
                                         Ingeniería de Sistemas
                                     </span>
                                     , con un fuerte compromiso con la excelencia académica,
                                     formando parte del{" "}
-                                    <span className="font-semibold text-yellow-400">
+                                    <span className="font-semibold text-blue-400">
                                         tercio superior
                                     </span>
                                     . He representado a mi universidad en{" "}
-                                    <span className="font-semibold text-yellow-400">
+                                    <span className="font-semibold text-blue-400">
                                         congresos nacionales
                                     </span>
-                                    , como <span className="font-semibold text-yellow-400">CONEIMERA</span>, e{" "}
-                                    <span className="font-semibold text-yellow-400">internacionales</span>, como{" "}
-                                    <span className="font-semibold text-yellow-400">CIMPS</span>, donde he tenido
+                                    , como <span className="font-semibold text-blue-400">CONEIMERA</span>, e{" "}
+                                    <span className="font-semibold text-blue-400">internacionales</span>, como{" "}
+                                    <span className="font-semibold text-blue-400">CIMPS</span>, donde he tenido
                                     la oportunidad de compartir conocimientos y aprender de
                                     expertos en tecnología.
                                     He trabajado en diversos proyectos como{" "}
-                                    <span className="font-semibold text-yellow-400">freelancer</span>,
+                                    <span className="font-semibold text-blue-400">freelancer</span>,
                                     enfrentando desafíos reales y desarrollando soluciones innovadoras.
                                     Mi pasión por la programación me ha llevado a destacar en{" "}
-                                    <span className="font-semibold text-yellow-400">
+                                    <span className="font-semibold text-blue-400">
                                         concursos de programación competitiva
                                     </span>, donde he puesto a prueba mis habilidades en resolución de problemas y optimización de código.
                                     Además, he sido{" "}
-                                    <span className="font-semibold text-yellow-400">ponente en el área de desarrollo web</span>,
+                                    <span className="font-semibold text-blue-400">ponente en el área de desarrollo web</span>,
                                     participando activamente en una{" "}
-                                    <span className="font-semibold text-yellow-400">
+                                    <span className="font-semibold text-blue-400">
                                         organización de desarrolladores
                                     </span>
                                     dedicada a compartir conocimientos y fomentar el aprendizaje en la comunidad tecnológica.
