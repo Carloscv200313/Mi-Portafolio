@@ -1,5 +1,6 @@
 import ContactoOscuroMejorado from "@/components/contacto-oscuro-mejorado";
 import Hero from "@/components/hero";
+import { Imagen3D } from "@/components/Imagen3D";
 import Portfolio from "@/components/Portfolio";
 import SobreMi from "@/components/SobreMi";
 import { SparklesCore } from "@/components/sparkles"
@@ -20,9 +21,11 @@ export default function Home() {
       </div>
       {/* <Publicidad />*/}
       <div className="relative z-10">
-
         {/* Sección Hero */}
-        <section id="hero">
+        <section id="hero" className="xl:grid xl:grid-cols-2 min-h-[calc(100vh-85px)] flex flex-col-reverse">
+          <div className="flex items-center justify-center">
+            <Imagen3D />
+          </div>
           <Hero />
         </section>
         <section id="about" className="py-12">
