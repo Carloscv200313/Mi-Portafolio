@@ -56,8 +56,7 @@ export const projects: Project[] = [
     languages: ["React.js", "TypeScript", "Tailwind"],
     url: "https://nuestro-legado.vercel.app/",
     category: "Frontend",
-  },
-  {
+  },{
     id: "6",
     title: "Sistema de Votaciones",
     description: "Sistema desarrollado durante mis prácticas 🛠️ con sistemas WebSocket 🌐, creando un modelo CRUD en el que los usuarios pueden votar 🗳️, eliminar ❌ o crear bandas 🎸 en tiempo real ⏳. Cualquier persona que esté en la misma página puede ver los cambios reflejados de inmediato 🔄👀. El proyecto fue implementado con Node.js 🟢, Express 🚀 y la librería Socket.io 🔗 para garantizar una comunicación fluida y en tiempo real ⚡.",
@@ -67,15 +66,14 @@ export const projects: Project[] = [
     category: "Backend",
   },
   {
-    "id": "7",
-    "title": "Plataforma de cursos",
-    "description":"Proyecto desarrollado para una empresa 🏢 que necesitaba capacitar a sus empleados 👨‍🏭📚 mediante cursos específicos y evaluar sus conocimientos con exámenes de certificación 🎓. El sistema permite a los gerentes o encargados de los talleres monitorear el progreso 📊 de cada trabajador, verificar la realización de sus exámenes ✅, administrar sus calificaciones 📑 y controlar los intentos permitidos 🔄 para presentar la prueba. Para la gestión de contenido multimedia 🎥, el sistema utiliza Cloudinary ☁️ para el almacenamiento de videos, permitiendo ofrecer el servicio de forma gratuita 💰 sin costos adicionales. Fue desarrollado con Next.js ⚛️ tanto en el frontend como en el backend, utilizando SQL Server 🗄️ como base de datos relacional. Además, implementa medidas de seguridad 🔐 como middleware y JWT para la autenticación, almacenando los tokens en cookies 🍪 para una mayor protección de los datos.",
-    "image": "/Videos.png",
-    "languages": ["React", "Next", "SQLserver", "TypeScript", "Tailwind","Claudinary"],
-    "url": "https://github.com/Carloscv200313/Videos-con-Certificacion",
-    "category": "Fullstack"
+    id: "7",
+    title: "Tic Tac Toe",
+    description: "🎮 He desarrollado un innovador juego de Tic-Tac-Toe Online, donde los jugadores pueden 👤 crear su propio usuario con credenciales seguras, 🎭 controlar un personaje asignado y ⚔️ enfrentarse a otros en combates en tiempo real. 📊 Además, el juego incluye un registro de victorias y derrotas para seguir el progreso de cada usuario. 🚀 Actualmente, sigue en constante mejora con nuevas funciones y optimizaciones para ofrecer la mejor experiencia posible. ¡Un clásico reinventado para desafiar tu estrategia! 🧠🔥",
+    image: "/michi.jpg",
+    languages: ["React.js", "Node.js", "Tailwind","Socket.io","Express"],
+    url: "https://juegomichi.netlify.app",
+    category: "Fullstack",
   },
-
   {
     id: "8",
     title: "Catalogo Virtual",
@@ -95,13 +93,18 @@ export const projects: Project[] = [
     url: "/",
     category: "Backend",
   },
-  {
-    id: "10",
-    title: "Tic Tac Toe",
-    description: "🎮 He desarrollado un innovador juego de Tic-Tac-Toe Online, donde los jugadores pueden 👤 crear su propio usuario con credenciales seguras, 🎭 controlar un personaje asignado y ⚔️ enfrentarse a otros en combates en tiempo real. 📊 Además, el juego incluye un registro de victorias y derrotas para seguir el progreso de cada usuario. 🚀 Actualmente, sigue en constante mejora con nuevas funciones y optimizaciones para ofrecer la mejor experiencia posible. ¡Un clásico reinventado para desafiar tu estrategia! 🧠🔥",
-    image: "/michi.jpg",
-    languages: ["React.js", "Node.js", "Tailwind","Socket.io","Express"],
-    url: "https://juegomichi.netlify.app",
-    category: "Fullstack",
-  },
+
 ]
+/*
+
+  {
+    "id": "7",
+    "title": "Plataforma de cursos",
+    "description":"Proyecto desarrollado para una empresa 🏢 que necesitaba capacitar a sus empleados 👨‍🏭📚 mediante cursos específicos y evaluar sus conocimientos con exámenes de certificación 🎓. El sistema permite a los gerentes o encargados de los talleres monitorear el progreso 📊 de cada trabajador, verificar la realización de sus exámenes ✅, administrar sus calificaciones 📑 y controlar los intentos permitidos 🔄 para presentar la prueba. Para la gestión de contenido multimedia 🎥, el sistema utiliza Cloudinary ☁️ para el almacenamiento de videos, permitiendo ofrecer el servicio de forma gratuita 💰 sin costos adicionales. Fue desarrollado con Next.js ⚛️ tanto en el frontend como en el backend, utilizando SQL Server 🗄️ como base de datos relacional. Además, implementa medidas de seguridad 🔐 como middleware y JWT para la autenticación, almacenando los tokens en cookies 🍪 para una mayor protección de los datos.",
+    "image": "/Videos.png",
+    "languages": ["React", "Next", "SQLserver", "TypeScript", "Tailwind","Claudinary"],
+    "url": "https://github.com/Carloscv200313/Videos-con-Certificacion",
+    "category": "Fullstack"
+  },
+
+*/
