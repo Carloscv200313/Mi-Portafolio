@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="w-full h-full text-start py-5 md:p-4 flex flex-col justify-center">
           
           {/* Animación para "Hola, Soy Carlos" */}
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -26,7 +26,7 @@ export default function Hero() {
             className="text-lg md:text-2xl font-normal text-gray-300 pb-2"
           >
             Hola, Soy <span className="text-blue-400">Carlos Calderon</span>
-          </motion.h2>
+          </motion.h1>
 
           <div className="space-y-4 md:space-y-8 text-white pb-10">
             
