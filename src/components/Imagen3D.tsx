@@ -5,7 +5,6 @@ const SplineLocal = dynamic(() => import("./SplineViewer"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
-      <p className="text-white">Cargando escena 3D...</p>
     </div>
   ),
 });
@@ -16,6 +15,7 @@ export const Imagen3D = () => {
         <SplineLocal
           scene="https://prod.spline.design/nC8mML7yKDFE4yTp/scene.splinecode"
           className="w-full h-full"
+          placeholder="/logo.png"
         />
       </div>
     </div>
