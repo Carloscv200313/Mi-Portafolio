@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.carlos-calderon.site
+
+# Sitemaps
+Sitemap: https://www.carlos-calderon.site/sitemap.xml
