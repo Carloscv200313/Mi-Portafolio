@@ -4,13 +4,13 @@ import Hero from "@/components/hero";
 import { Imagen3D } from "@/components/Imagen3D";
 import Portfolio from "@/components/Portfolio";
 import SobreMi from "@/components/SobreMi";
-import { SparklesCore } from "@/components/sparkles"
+//import { SparklesCore } from "@/components/sparkles"
 //import Publicidad from "@/components/ui/Publicidad";
 export default function Home() {
   return (
     <main className="relative overflow-hidden md:pt-16">
       <div className="absolute inset-0 z-0">
-        <SparklesCore
+        {/* <SparklesCore
           id="tsparticlesfullpage "
           background="transparent"
           minSize={0.5}
@@ -18,7 +18,7 @@ export default function Home() {
           particleDensity={100}
           className="w-full h-full"
           particleColor="#FFFFFF"
-        />
+        />*/}
       </div>
       <SplashCursor/>
       {/* <Publicidad />*/}
