@@ -29,22 +29,22 @@ export default function Navbar() {
 
       <div className="flex items-center md:space-x-10 space-x-6  md:text-xl text-base   text-gray-300 transition-colors">
         <div className="relative group">
-          <button onClick={() => scrollToSection("hero")} className="hover:text-white">Inicio</button>
+          <Link href="/#inicio" className="hover:text-white" onClick={() => scrollToSection("inicio")}>Inicio</Link>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
 
         <div className="relative group">
-          <button onClick={() => scrollToSection("about")} className="hover:text-white">Sobre Mi</button>
+          <Link href="/#sobre-mi" className="hover:text-white" onClick={() => scrollToSection("sobre-mi")}>Sobre Mi</Link>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
 
         <div className="relative group">
-          <button onClick={() => scrollToSection("portfolio")} className="hover:text-white">Proyectos</button>
+          <Link href="/#proyectos" className="hover:text-white" onClick={() => scrollToSection("proyectos")}>Proyectos</Link>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
 
         <div className="relative group">
-          <button onClick={() => scrollToSection("contacto")} className="hover:text-white">Contacto</button>
+          <Link href="/#contacto" className="hover:text-white" onClick={() => scrollToSection("contacto")}>Contacto</Link>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
         </div>
       </div>

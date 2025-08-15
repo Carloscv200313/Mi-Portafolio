@@ -24,17 +24,17 @@ export default function Home() {
       {/* <Publicidad />*/}
       <div className="relative z-10">
         {/* Sección Hero */}
-        <section id="hero" className="xl:grid xl:grid-cols-2 min-h-[calc(100vh-85px)] flex flex-col-reverse">
+        <section id="inicio" className="xl:grid xl:grid-cols-2 min-h-[calc(100vh-85px)] flex flex-col-reverse">
           <div className="flex items-center justify-center">
             <Imagen3D />
           </div>
           <Hero />
         </section>
-        <section id="about" className="py-12">
+        <section id="sobre-mi" className="py-12">
           <SobreMi />
         </section>
         {/* Sección Portfolio */}
-        <section id="portfolio" className="py-12">
+        <section id="proyectos" className="py-12">
           <Portfolio />
         </section>
 
