@@ -3,12 +3,21 @@ import "./globals.css";
 import Navbar from "@/components/navbar"
 //import SplashCursor from "@/components/Efecto";
 export const metadata: Metadata = {
-  title: "Carlos Calderon | Desarrollador Full Stack",
+  title: {
+    default: "Carlos Calderon | Desarrollador Full Stack",
+    template: "%s | Carlos Calderon"
+  },
   description: "Portafolio de Carlos Calderon, desarrollador Full Stack especializado en páginas web, ecommerce, plataformas digitales y soluciones personalizadas. Contacta para llevar tus ideas a la realidad.",
   keywords: ["Carlos Calderon", "desarrollador full stack", "páginas web", "ecommerce", "plataformas digitales", "programador Next.js", "React", "Node.js"],
+  metadataBase: new URL('https://www.carlos-calderon.site'),
+  publisher: "Carlos Calderon",
+  creator: "Carlos Calderon",
+  icons: {
+    icon: '/logo.png', // Asegúrate que sea PNG
+    apple: '/logo.png',
+  },
   authors: [{ name: "Carlos Calderon" }],
   applicationName: "Carlos Calderon",
-  metadataBase: new URL('https://www.carlos-calderon.site'),
   alternates: {
     canonical: '/',
   },
@@ -44,8 +53,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
+              "@type": ["Person", "Brand"],
               "name": "Carlos Calderon",
+              "alternateName": "Cartos Calderon", // Solo si aparece mal escrito en algunos lugares
+              "brand": {
+                "@type": "Brand",
+                "logo": "https://www.carlos-calderon.site/logo.png",
+                "name": "Carlos Calderon Dev"
+              },
               "url": "https://www.carlos-calderon.site",
               "logo": "https://www.carlos-calderon.site/logo.png",
               "image": "https://www.carlos-calderon.site/logo.png",
