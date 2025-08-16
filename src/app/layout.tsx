@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Carlos Calderon",
     images: [
       {
-        url: "https://www.carlos-calderon.site/logo.png",
+        url: "https://www.carlos-calderon.site/favicon.ico",
         width: 1200,
         height: 630,
         alt: "Portafolio de Carlos Calderon"
@@ -58,12 +58,12 @@ export default function RootLayout({
               "alternateName": "Cartos Calderon", // Solo si aparece mal escrito en algunos lugares
               "brand": {
                 "@type": "Brand",
-                "logo": "https://www.carlos-calderon.site/logo.png",
+                "logo": "https://www.carlos-calderon.site/favicon.ico",
                 "name": "Carlos Calderon Dev"
               },
               "url": "https://www.carlos-calderon.site",
-              "logo": "https://www.carlos-calderon.site/logo.png",
-              "image": "https://www.carlos-calderon.site/logo.png",
+              "logo": "https://www.carlos-calderon.site/favicon.ico",
+              "image": "hthttps://www.carlos-calderon.site/favicon.ico",
               "jobTitle": "Desarrollador Full Stack",
               "description": "Portafolio profesional de Carlos Calderon, especializado en desarrollo web, ecommerce y soluciones digitales.",
               "sameAs": [
