@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   publisher: "Carlos Calderon",
   creator: "Carlos Calderon",
   icons: {
-    icon: '/logo.png', // Asegúrate que sea PNG
-    apple: '/logo.png',
+    icon: '/favicon.ico', // Asegúrate que sea PNG
+    apple: '/favicon.ico',
   },
   authors: [{ name: "Carlos Calderon" }],
   applicationName: "Carlos Calderon",
