@@ -48,7 +48,7 @@ import Portfolio from "@/components/Portfolio";
 
 export default function Home() {
   return (
-    <section className="py-12">
+    <section className="pt-20">
       <Portfolio />
     </section>
   );

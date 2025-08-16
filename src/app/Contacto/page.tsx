@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <section>
+    <section className="pt-16">
       <ContactoOscuroMejorado />
     </section>
   );
