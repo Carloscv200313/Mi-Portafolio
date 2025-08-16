@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: "Portafolio de Carlos Calderon, desarrollador Full Stack especializado en páginas web, ecommerce, plataformas digitales y soluciones personalizadas. Contacta para llevar tus ideas a la realidad.",
   keywords: ["Carlos Calderon", "desarrollador full stack", "páginas web", "ecommerce", "plataformas digitales", "programador Next.js", "React", "Node.js"],
   authors: [{ name: "Carlos Calderon" }],
+  applicationName: "Carlos Calderon",
+  metadataBase: new URL('https://www.carlos-calderon.site'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Carlos Calderon | Desarrollador Full Stack",
     description: "Conoce mi portafolio de desarrollo web y mis proyectos más recientes.",
