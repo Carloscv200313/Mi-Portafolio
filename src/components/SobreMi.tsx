@@ -42,9 +42,9 @@ export default function SobreMi() {
                         >
                             {/* Encabezado */}
                             <motion.div className="space-y-4" {...fadeIn}>
-                                <h1 className="mb-10 text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 via-sky-400 to-red-950">
+                                <h2 className="mb-10 text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 via-sky-400 to-red-950">
                                     Sobre Mí
-                                </h1>
+                                </h2>
                                 <p className="md:text-base lg:text-lg lg:text-start  text-sm leading-relaxed">
                                     Soy estudiante de sexto ciclo de{" "}
                                     <span className="font-semibold text-blue-400">
