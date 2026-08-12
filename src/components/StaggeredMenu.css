@@ -182,3 +182,28 @@
   opacity: var(--sm-num-opacity, 0);
   order: -1;
 }
+
+.sm-lang-toggle {
+  margin-top: 2rem;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.sm-lang-active {
+  color: var(--sm-accent, #d6ff3f);
+}
+
+.sm-lang-sep {
+  opacity: 0.4;
+}

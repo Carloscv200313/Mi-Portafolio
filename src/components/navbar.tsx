@@ -3,15 +3,18 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import StaggeredMenu from "@/components/StaggeredMenu"
-
-const links = [
-  { id: "inicio", label: "Inicio", href: "/" },
-  { id: "sobre-mi", label: "Sobre mí", href: "/#sobre-mi" },
-  { id: "proyectos", label: "Proyectos", href: "/#proyectos" },
-  { id: "contacto", label: "Contacto", href: "/#contacto" },
-]
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export default function Navbar() {
+  const { language, toggleLanguage, t } = useLanguage()
+
+  const links = [
+    { id: "inicio", label: t.nav.inicio, href: "/" },
+    { id: "sobre-mi", label: t.nav.sobreMi, href: "/#sobre-mi" },
+    { id: "proyectos", label: t.nav.proyectos, href: "/#proyectos" },
+    { id: "contacto", label: t.nav.contacto, href: "/#contacto" },
+  ]
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id)
     if (section) section.scrollIntoView({ behavior: "smooth" })
@@ -50,13 +53,24 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent-blue transition-all duration-300 group-hover:w-full" />
             </div>
           ))}
+
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            aria-label={t.langToggle.label}
+            className="flex items-center gap-1 rounded-full border border-white/15 px-3 py-1.5 text-text-secondary hover:border-accent-blue/40 hover:text-text-primary transition-colors"
+          >
+            <span className={language === "es" ? "text-accent-blue" : ""}>ES</span>
+            <span className="opacity-40">/</span>
+            <span className={language === "en" ? "text-accent-blue" : ""}>EN</span>
+          </button>
         </div>
       </motion.nav>
 
       {/* Menú escalonado — solo debajo de md */}
       <div className="md:hidden">
         <StaggeredMenu
-          items={links.map((l) => ({ label: l.label, link: l.href, ariaLabel: `Ir a ${l.label}` }))}
+          items={links.map((l) => ({ label: l.label, link: l.href, ariaLabel: `${l.label}` }))}
         />
       </div>
     </>

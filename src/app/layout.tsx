@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar"
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 //import SplashCursor from "@/components/Efecto";
 
 const manrope = Manrope({
@@ -100,10 +101,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${manrope.variable} ${bricolage.variable} ${plexMono.variable} min-h-screen bg-bg-dark antialiased bg-grid-white/[0.02] relative font-sans overflow-x-hidden`}>
-        <div className="relative">
-          <Navbar />
-        </div>
-        {children}
+        <LanguageProvider>
+          <div className="relative">
+            <Navbar />
+          </div>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

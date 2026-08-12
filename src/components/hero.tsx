@@ -1,9 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Briefcase } from "lucide-react";
+import { ArrowUpRight, Briefcase, Download } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -23,7 +26,7 @@ export default function Hero() {
             viewport={{ once: false, amount: 0.2 }}
             className="eyebrow pb-4 w-2/3 md:w-auto"
           >
-            Disponible para nuevos proyectos — Lima, Perú
+            {t.hero.badge}
           </motion.p>
 
           <div className="space-y-4 md:space-y-8 pb-10">
@@ -34,9 +37,9 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.2 }}
               className="font-display text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.02]"
             >
-              Carlos Calderón,
+              {t.hero.titleLine1}
               <br />
-              <span className="text-accent-blue">ingeniero</span> de software full-stack.
+              <span className="text-accent-blue">{t.hero.titleHighlight}</span> {t.hero.titleLine2}
             </motion.h1>
 
             <motion.p
@@ -46,9 +49,7 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.2 }}
               className="text-text-secondary text-sm md:text-lg md:max-w-2xl max-w-xl leading-relaxed"
             >
-              Diseño arquitectura de software y construyo sistemas SaaS escalables de punta a punta:
-              modelado de dominio, multitenancy, autenticación y control de acceso, integraciones con
-              IA. Next.js, TypeScript y Supabase como base, en remoto o híbrido desde Lima.
+              {t.hero.description}
             </motion.p>
 
             <motion.div
@@ -58,7 +59,7 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.2 }}
               className="flex flex-wrap gap-2 font-mono text-[11px] md:text-xs uppercase tracking-wider text-text-secondary"
             >
-              {["Next.js", "TypeScript", "Supabase", "Node.js", "Docker / AWS"].map((tag) => (
+              {t.hero.tags.map((tag) => (
                 <span key={tag} className="px-3 py-1 rounded-full border border-white/10 bg-bg-light/60">
                   {tag}
                 </span>
@@ -71,7 +72,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="flex flex-row flex-nowrap items-center justify-start gap-2.5 sm:gap-4"
+            className="flex flex-row flex-wrap items-center justify-start gap-2.5 sm:gap-4"
           >
             <Button
               size="lg"
@@ -79,7 +80,7 @@ export default function Hero() {
               onClick={() => scrollToSection("contacto")}
             >
               <Briefcase className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
-              Hablemos
+              {t.hero.ctaPrimary}
             </Button>
 
             <Button
@@ -88,8 +89,20 @@ export default function Hero() {
               variant="outline"
               className="border border-white/15 bg-transparent text-text-primary hover:bg-white/5 hover:border-white/30 transition-all duration-300 rounded-full px-3.5 sm:px-8 text-sm sm:text-base whitespace-nowrap"
             >
-              Ver proyectos
+              {t.hero.ctaSecondary}
               <ArrowUpRight className="ml-1.5 sm:ml-2 h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+            </Button>
+
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border border-white/15 bg-transparent text-text-primary hover:bg-white/5 hover:border-white/30 transition-all duration-300 rounded-full px-3.5 sm:px-8 text-sm sm:text-base whitespace-nowrap"
+            >
+              <a href="/CV_Carlos_Calderon.pdf" download>
+                {t.hero.ctaCv}
+                <Download className="ml-1.5 sm:ml-2 h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+              </a>
             </Button>
           </motion.div>
         </div>

@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 /** Vista ampliada a pantalla completa con carrusel, reusable para cualquier set de imágenes. */
 export default function ImageLightbox({
@@ -19,6 +20,7 @@ export default function ImageLightbox({
   onIndexChange: (i: number) => void;
   onClose: () => void;
 }) {
+  const { t } = useLanguage();
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -46,7 +48,7 @@ export default function ImageLightbox({
     >
       <button
         type="button"
-        aria-label="Cerrar"
+        aria-label={t.lightbox.close}
         onClick={onClose}
         className="absolute top-4 right-4 md:top-6 md:right-6 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
       >

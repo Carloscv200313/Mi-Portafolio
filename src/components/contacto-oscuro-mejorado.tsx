@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Send, User, Mail, MessageSquare, MapPin, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/Carloscv200313", icon: Github },
@@ -18,6 +19,7 @@ const socials = [
 ];
 
 export default function ContactoOscuroMejorado() {
+  const { t } = useLanguage();
   const form = useRef<HTMLFormElement | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -44,13 +46,12 @@ export default function ContactoOscuroMejorado() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="eyebrow mb-3">09 / Contacto</p>
+          <p className="eyebrow mb-3">{t.contacto.eyebrow}</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-text-primary">
-            Hablemos de tu proyecto
+            {t.contacto.heading}
           </h2>
           <p className="text-text-secondary mb-8 leading-relaxed max-w-md">
-            ¿Listo para lanzar o escalar tu producto? Estoy disponible en remoto o híbrido desde
-            Lima, Perú. Escribime por el formulario o directo por acá.
+            {t.contacto.description}
           </p>
 
           <div className="space-y-3 mb-8">
@@ -59,7 +60,7 @@ export default function ContactoOscuroMejorado() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-blue opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-blue" />
               </span>
-              Disponible para nuevos proyectos
+              {t.contacto.availability}
             </div>
             <a
               href="mailto:carlosscv200313@gmail.com"
@@ -70,7 +71,7 @@ export default function ContactoOscuroMejorado() {
             </a>
             <div className="flex items-center gap-3 text-text-secondary">
               <MapPin className="h-4 w-4 text-accent-blue" />
-              Lima, Perú — remoto / híbrido
+              {t.contacto.location}
             </div>
           </div>
 
@@ -101,7 +102,7 @@ export default function ContactoOscuroMejorado() {
           <Card className="bg-bg-light/60 border border-white/10 backdrop-blur-md w-full max-w-lg mx-auto shadow-lg shadow-black/30">
             <CardHeader>
               <CardTitle className="font-display text-2xl font-bold text-text-primary">
-                Envíame un mensaje
+                {t.contacto.formTitle}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -111,7 +112,7 @@ export default function ContactoOscuroMejorado() {
                   <Input
                     type="text"
                     name="name"
-                    placeholder="Nombre"
+                    placeholder={t.contacto.namePlaceholder}
                     required
                     className="pl-10 bg-gray-900/60 border-white/10 placeholder-white/50 text-white focus-visible:ring-2 focus-visible:ring-accent-blue"
                   />
@@ -121,7 +122,7 @@ export default function ContactoOscuroMejorado() {
                   <Input
                     type="email"
                     name="email"
-                    placeholder="Correo electrónico"
+                    placeholder={t.contacto.emailPlaceholder}
                     required
                     className="pl-10 bg-gray-900/60 border-white/10 placeholder-white/50 text-white focus-visible:ring-2 focus-visible:ring-accent-blue"
                   />
@@ -129,7 +130,7 @@ export default function ContactoOscuroMejorado() {
                 <div className="relative">
                   <MessageSquare className="absolute left-3 top-3 text-white/50" size={18} />
                   <Textarea
-                    placeholder="Tu mensaje"
+                    placeholder={t.contacto.messagePlaceholder}
                     name="mensaje"
                     required
                     className="pl-10 bg-gray-900/60 border-white/10 placeholder-white/50 text-white focus-visible:ring-2 focus-visible:ring-accent-blue"
@@ -140,7 +141,7 @@ export default function ContactoOscuroMejorado() {
                   type="submit"
                   className="w-full bg-accent-blue hover:bg-accent-blue/85 text-bg-dark font-semibold transition-all duration-300 ease-in-out transform hover:scale-[1.02] rounded-full"
                 >
-                  Enviar
+                  {t.contacto.send}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
               </form>

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ZoomIn } from "lucide-react";
 import ImageLightbox from "@/components/ImageLightbox";
 import { setOverlayOpen } from "@/lib/overlay-state";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const screenshots: string[] = [
   "/apachange-01.jpeg",
@@ -15,6 +16,7 @@ const screenshots: string[] = [
 ];
 
 export default function MobileSection() {
+  const { t } = useLanguage();
   const [index, setIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -40,23 +42,21 @@ export default function MobileSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="eyebrow mb-3">07 / Mobile</p>
+          <p className="eyebrow mb-3">{t.mobile.eyebrow}</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-text-primary">
-            También en móvil
+            {t.mobile.heading}
           </h2>
           <p className="text-text-secondary mb-1 leading-relaxed">
-            <span className="text-text-primary font-semibold">AlpaChange</span> — app nativa en
-            Kotlin para reportar y gestionar incidencias de infraestructura académica en tiempo
-            real, desarrollada para la UNTELS.
+            <span className="text-text-primary font-semibold">{t.mobile.appName}</span>
+            {t.mobile.bio1Post}
           </p>
           <p className="text-text-secondary mb-6 leading-relaxed">
-            Login institucional, reportes con foto y ubicación en mapa, notificaciones, roles
-            (estudiante/docente/administrador) y sincronización en segundo plano.
+            {t.mobile.bio2}
           </p>
           <ul className="text-text-secondary space-y-2 text-sm md:text-base font-mono">
-            <li>&gt; Firebase Auth, Realtime Database y Cloud Messaging</li>
-            <li>&gt; Reportes con foto (Cloudinary) y mapa (OpenStreetMap)</li>
-            <li>&gt; Servicio en segundo plano con sincronización en tiempo real</li>
+            {t.mobile.bullets.map((b) => (
+              <li key={b}>&gt; {b}</li>
+            ))}
           </ul>
         </motion.div>
 
@@ -77,7 +77,7 @@ export default function MobileSection() {
                   type="button"
                   onClick={() => setLightboxOpen(true)}
                   className="group absolute inset-0 z-0"
-                  aria-label="Ver captura en grande"
+                  aria-label={t.portfolio.zoomHint}
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -90,7 +90,7 @@ export default function MobileSection() {
                     >
                       <Image
                         src={screenshots[index]}
-                        alt={`AlpaChange — captura ${index + 1} de ${screenshots.length}`}
+                        alt={`${t.mobile.appName} — ${t.lightbox.captureLabel} ${index + 1} / ${screenshots.length}`}
                         fill
                         className="object-cover"
                         sizes="260px"
@@ -108,7 +108,7 @@ export default function MobileSection() {
                       <button
                         key={i}
                         type="button"
-                        aria-label={`Ir a captura ${i + 1}`}
+                        aria-label={`${i + 1}`}
                         onClick={() => setIndex(i)}
                         className={`h-1.5 rounded-full transition-all ${i === index ? "w-4 bg-accent-blue" : "w-1.5 bg-white/50"
                           }`}
@@ -120,9 +120,9 @@ export default function MobileSection() {
             ) : (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-grid-white/[0.02] px-6 text-center">
                 <span className="font-display text-lg font-bold text-text-primary/90">
-                  AlpaChange
+                  {t.mobile.appName}
                 </span>
-                <span className="text-xs text-text-secondary">Capturas próximamente</span>
+                <span className="text-xs text-text-secondary">{t.mobile.comingSoon}</span>
               </div>
             )}
           </div>
@@ -131,7 +131,7 @@ export default function MobileSection() {
 
       {lightboxOpen && (
         <ImageLightbox
-          title="AlpaChange"
+          title={t.mobile.appName}
           images={screenshots}
           index={index}
           onIndexChange={setIndex}

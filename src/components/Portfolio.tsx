@@ -12,6 +12,8 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image"
 import ImageLightbox from "@/components/ImageLightbox"
 import { setOverlayOpen } from "@/lib/overlay-state"
+import { useLanguage } from "@/lib/i18n/LanguageContext"
+import type { Dictionary } from "@/lib/i18n/dictionaries"
 
 const categories: ProjectCategory[] = ["Frontend", "Backend", "Fullstack"]
 
@@ -48,12 +50,14 @@ function ProjectGallery({
   index,
   onIndexChange,
   onOpenLightbox,
+  zoomHint,
 }: {
   project: Project
   className: string
   index: number
   onIndexChange: (i: number) => void
   onOpenLightbox: () => void
+  zoomHint: string
 }) {
   const images = project.images ?? []
 
@@ -67,7 +71,7 @@ function ProjectGallery({
         type="button"
         onClick={onOpenLightbox}
         className={`${className} group relative block overflow-hidden`}
-        aria-label="Ver imagen en grande"
+        aria-label={zoomHint}
       >
         <Image src={images[0]} alt={project.title} fill className="object-cover" />
         <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/30 group-hover:opacity-100">
@@ -86,7 +90,7 @@ function ProjectGallery({
         type="button"
         onClick={onOpenLightbox}
         className="group absolute inset-0 z-0"
-        aria-label="Ver imagen en grande"
+        aria-label={zoomHint}
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -99,7 +103,7 @@ function ProjectGallery({
           >
             <Image
               src={images[index]}
-              alt={`${project.title} — captura ${index + 1} de ${images.length}`}
+              alt={`${project.title} — ${index + 1} / ${images.length}`}
               fill
               className="object-cover"
             />
@@ -112,7 +116,7 @@ function ProjectGallery({
 
       <button
         type="button"
-        aria-label="Anterior"
+        aria-label="Prev"
         onClick={(e) => {
           e.stopPropagation()
           prev()
@@ -123,7 +127,7 @@ function ProjectGallery({
       </button>
       <button
         type="button"
-        aria-label="Siguiente"
+        aria-label="Next"
         onClick={(e) => {
           e.stopPropagation()
           next()
@@ -138,7 +142,7 @@ function ProjectGallery({
           <button
             key={i}
             type="button"
-            aria-label={`Ir a imagen ${i + 1}`}
+            aria-label={`${i + 1}`}
             onClick={(e) => {
               e.stopPropagation()
               onIndexChange(i)
@@ -151,7 +155,7 @@ function ProjectGallery({
   )
 }
 
-function ProjectLink({ project }: { project: Project }) {
+function ProjectLink({ project, t }: { project: Project; t: Dictionary["portfolio"] }) {
   if (project.demoUrl) {
     return (
       <Button
@@ -159,7 +163,7 @@ function ProjectLink({ project }: { project: Project }) {
         className="w-full bg-accent-blue text-bg-dark hover:bg-accent-green transition-colors duration-300"
       >
         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-          Ver proyecto en vivo <ExternalLink className="ml-2 h-4 w-4" />
+          {t.ctaLive} <ExternalLink className="ml-2 h-4 w-4" />
         </a>
       </Button>
     )
@@ -171,7 +175,7 @@ function ProjectLink({ project }: { project: Project }) {
         className="w-full bg-accent-blue text-bg-dark hover:bg-accent-green transition-colors duration-300"
       >
         <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-          Ver código en GitHub <Github className="ml-2 h-4 w-4" />
+          {t.ctaCode} <Github className="ml-2 h-4 w-4" />
         </a>
       </Button>
     )
@@ -179,18 +183,25 @@ function ProjectLink({ project }: { project: Project }) {
   return (
     <div className="flex w-full items-center justify-center gap-2 rounded-md border border-white/10 bg-bg-light/50 py-2 text-sm text-text-secondary">
       <Lock className="h-4 w-4" />
-      Código privado{project.client ? ` — proyecto de cliente (${project.client})` : ""}
+      {project.client ? `${t.privateCodeClient} (${project.client})` : t.privateCode}
     </div>
   )
 }
 
 export default function Portfolio() {
+  const { t } = useLanguage()
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [filter, setFilter] = useState<ProjectCategory | "all">("all")
   const [galleryIndex, setGalleryIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
 
-  const filteredProjects = projects.filter((project) => filter === "all" || project.category === filter)
+  // Fusiona los datos estáticos (imágenes, stack, links) con el texto traducido del diccionario.
+  const localizedProjects: Project[] = projects.map((p) => {
+    const tr = t.projects[p.id]
+    return tr ? { ...p, title: tr.title, description: tr.description, client: tr.client ?? p.client } : p
+  })
+
+  const filteredProjects = localizedProjects.filter((project) => filter === "all" || project.category === filter)
 
   // Avisa al resto del sitio (botón flotante del menú mobile) que hay un overlay a
   // pantalla completa cubriendo la página.
@@ -206,19 +217,24 @@ export default function Portfolio() {
     setGalleryIndex(0)
   }
 
+  const filterLabel = (c: ProjectCategory) => {
+    if (c === "Frontend") return t.portfolio.filters.frontend
+    if (c === "Backend") return t.portfolio.filters.backend
+    return t.portfolio.filters.fullstack
+  }
+
   return (
     <div className="relative container mx-auto px-4 py-16 bg-transparent text-text-primary z-10">
       <div className="pointer-events-none absolute -top-6 left-10 h-44 w-44 rounded-full bg-accent-blue/5 blur-3xl" />
       <div className="text-center mb-8">
-        <p className="eyebrow">08 / Selección</p>
+        <p className="eyebrow">{t.portfolio.eyebrow}</p>
       </div>
       <TextAnimate animation="slideLeft" by="character"
         className="font-display text-4xl lg:text-7xl font-bold mb-10 text-center text-text-primary">
-        Mis Proyectos
+        {t.portfolio.heading}
       </TextAnimate>
       <p className="text-center text-text-secondary max-w-3xl mx-auto mb-8">
-        Sistemas diseñados para escalar: SaaS multitenant, plataformas de punto de venta y logística,
-        apps móviles e integraciones con IA construidas con arquitectura sólida desde el primer commit.
+        {t.portfolio.description}
       </p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -232,7 +248,7 @@ export default function Portfolio() {
           className={`${filter === "all" ? "bg-accent-blue text-bg-dark" : "text-text-secondary border-text-secondary"
             } hover:bg-accent-blue hover:text-bg-dark transition-colors duration-300`}
         >
-          Todos
+          {t.portfolio.filters.all}
         </Button>
         {categories.map((category) => (
           <Button
@@ -242,7 +258,7 @@ export default function Portfolio() {
             className={`${filter === category ? "bg-accent-blue text-bg-dark" : "text-text-secondary border-text-secondary"
               } hover:bg-accent-blue hover:text-bg-dark transition-colors duration-300`}
           >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
+            {filterLabel(category)}
           </Button>
         ))}
       </motion.div>
@@ -270,7 +286,7 @@ export default function Portfolio() {
                   />
                   <h3 className="font-display text-xl font-semibold mb-2 text-text-primary">{project.title}</h3>
                   {project.client && (
-                    <p className="text-xs text-text-secondary/70 mb-1">Cliente: {project.client}</p>
+                    <p className="text-xs text-text-secondary/70 mb-1">{t.portfolio.client} {project.client}</p>
                   )}
                   <p className="text-sm text-text-secondary line-clamp-2">{project.description}</p>
                   <Badge className="mt-2 bg-accent-green text-bg-dark">{project.category}</Badge>
@@ -300,9 +316,10 @@ export default function Portfolio() {
               index={galleryIndex}
               onIndexChange={setGalleryIndex}
               onOpenLightbox={() => setLightboxOpen(true)}
+              zoomHint={t.portfolio.zoomHint}
             />
             {selectedProject.client && (
-              <p className="text-xs text-text-secondary/70 -mt-2 mb-2">Cliente: {selectedProject.client}</p>
+              <p className="text-xs text-text-secondary/70 -mt-2 mb-2">{t.portfolio.client} {selectedProject.client}</p>
             )}
             <DialogDescription className="text-text-secondary">{selectedProject.description}</DialogDescription>
             <div className="flex flex-wrap gap-2 my-4">
@@ -316,7 +333,7 @@ export default function Portfolio() {
                 </Badge>
               ))}
             </div>
-            <ProjectLink project={selectedProject} />
+            <ProjectLink project={selectedProject} t={t.portfolio} />
           </DialogContent>
         )}
       </Dialog>
