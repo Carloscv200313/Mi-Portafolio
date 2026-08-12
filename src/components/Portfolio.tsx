@@ -1,16 +1,17 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { createPortal } from "react-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { type Project, projects, type ProjectCategory } from "@/../types/project"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Lock, Github, ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react"
+import { ExternalLink, Lock, Github, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react"
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image"
+import ImageLightbox from "@/components/ImageLightbox"
+import { setOverlayOpen } from "@/lib/overlay-state"
 
 const categories: ProjectCategory[] = ["Frontend", "Backend", "Fullstack"]
 
@@ -150,130 +151,6 @@ function ProjectGallery({
   )
 }
 
-/** Vista ampliada a pantalla completa con el mismo carrusel, para revisar el proyecto al detalle. */
-function Lightbox({
-  project,
-  index,
-  onIndexChange,
-  onClose,
-}: {
-  project: Project
-  index: number
-  onIndexChange: (i: number) => void
-  onClose: () => void
-}) {
-  const images = project.images ?? []
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose()
-      if (e.key === "ArrowLeft") onIndexChange((index - 1 + images.length) % images.length)
-      if (e.key === "ArrowRight") onIndexChange((index + 1) % images.length)
-    }
-    document.addEventListener("keydown", onKey)
-    document.body.style.overflow = "hidden"
-    return () => {
-      document.removeEventListener("keydown", onKey)
-      document.body.style.overflow = ""
-    }
-  }, [index, images.length, onIndexChange, onClose])
-
-  if (images.length === 0) return null
-
-  return createPortal(
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 backdrop-blur-sm px-4 py-8 pointer-events-auto"
-      onClick={onClose}
-    >
-      <button
-        type="button"
-        aria-label="Cerrar"
-        onClick={onClose}
-        className="absolute top-4 right-4 md:top-6 md:right-6 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
-      >
-        <X className="h-5 w-5" />
-      </button>
-
-      <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-white/60">
-        {project.title} — {index + 1} / {images.length}
-      </p>
-
-      <div
-        className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            className="relative h-full w-full"
-          >
-            <Image
-              src={images[index]}
-              alt={`${project.title} — captura ${index + 1} de ${images.length}`}
-              fill
-              sizes="90vw"
-              className="object-contain"
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        {images.length > 1 && (
-          <>
-            <button
-              type="button"
-              aria-label="Anterior"
-              onClick={(e) => {
-                e.stopPropagation()
-                onIndexChange((index - 1 + images.length) % images.length)
-              }}
-              className="absolute left-0 md:-left-16 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              type="button"
-              aria-label="Siguiente"
-              onClick={(e) => {
-                e.stopPropagation()
-                onIndexChange((index + 1) % images.length)
-              }}
-              className="absolute right-0 md:-right-16 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </>
-        )}
-      </div>
-
-      {images.length > 1 && (
-        <div className="mt-4 flex gap-1.5">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              aria-label={`Ir a imagen ${i + 1}`}
-              onClick={(e) => {
-                e.stopPropagation()
-                onIndexChange(i)
-              }}
-              className={`h-1.5 rounded-full transition-all ${i === index ? "w-6 bg-accent-blue" : "w-1.5 bg-white/30"}`}
-            />
-          ))}
-        </div>
-      )}
-    </motion.div>,
-    document.body
-  )
-}
-
 function ProjectLink({ project }: { project: Project }) {
   if (project.demoUrl) {
     return (
@@ -314,6 +191,15 @@ export default function Portfolio() {
   const [lightboxOpen, setLightboxOpen] = useState(false)
 
   const filteredProjects = projects.filter((project) => filter === "all" || project.category === filter)
+
+  // Avisa al resto del sitio (botón flotante del menú mobile) que hay un overlay a
+  // pantalla completa cubriendo la página.
+  const overlayOpen = !!selectedProject || lightboxOpen
+  useEffect(() => {
+    if (!overlayOpen) return
+    setOverlayOpen(true)
+    return () => setOverlayOpen(false)
+  }, [overlayOpen])
 
   const openProject = (project: Project) => {
     setSelectedProject(project)
@@ -438,8 +324,9 @@ export default function Portfolio() {
       {/* Sin AnimatePresence: combinado con createPortal, la animación de salida se queda
           pegada en opacity 0 sin desmontar. El fade de entrada (initial/animate) alcanza. */}
       {lightboxOpen && selectedProject && (
-        <Lightbox
-          project={selectedProject}
+        <ImageLightbox
+          title={selectedProject.title}
+          images={selectedProject.images ?? []}
           index={galleryIndex}
           onIndexChange={setGalleryIndex}
           onClose={() => setLightboxOpen(false)}

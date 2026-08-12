@@ -4,6 +4,7 @@
 // de paneles escalonados con GSAP.
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { useOverlayOpen } from "@/lib/overlay-state";
 import "./StaggeredMenu.css";
 
 export interface StaggeredMenuItem {
@@ -30,6 +31,7 @@ export default function StaggeredMenu({
   onItemClick,
 }: StaggeredMenuProps) {
   const [open, setOpen] = useState(false);
+  const overlayOpen = useOverlayOpen();
   const openRef = useRef(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -239,10 +241,12 @@ export default function StaggeredMenu({
 
       <button
         ref={toggleBtnRef}
-        className="sm-toggle-float pointer-events-auto"
+        className={`sm-toggle-float pointer-events-auto${overlayOpen && !open ? " sm-toggle-hidden" : ""}`}
         aria-label={open ? "Cerrar menú" : "Abrir menú"}
         aria-expanded={open}
         aria-controls="staggered-menu-panel"
+        aria-hidden={overlayOpen && !open}
+        tabIndex={overlayOpen && !open ? -1 : undefined}
         onClick={toggleMenu}
         type="button"
       >

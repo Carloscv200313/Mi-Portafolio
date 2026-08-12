@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { ZoomIn } from "lucide-react";
+import ImageLightbox from "@/components/ImageLightbox";
+import { setOverlayOpen } from "@/lib/overlay-state";
 
 const screenshots: string[] = [
   "/apachange-01.jpeg",
@@ -13,12 +16,19 @@ const screenshots: string[] = [
 
 export default function MobileSection() {
   const [index, setIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
-    if (screenshots.length < 2) return;
+    if (screenshots.length < 2 || lightboxOpen) return;
     const id = setInterval(() => setIndex((i) => (i + 1) % screenshots.length), 3200);
     return () => clearInterval(id);
-  }, []);
+  }, [lightboxOpen]);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    setOverlayOpen(true);
+    return () => setOverlayOpen(false);
+  }, [lightboxOpen]);
 
   return (
     <div className="relative container mx-auto px-4 py-20 md:py-28">
@@ -57,30 +67,40 @@ export default function MobileSection() {
           transition={{ duration: 0.5 }}
           className="flex justify-center"
         >
-          {/* Marco tipo celular: capturas verticales rotando */}
+          {/* Marco tipo celular: capturas verticales rotando, clickeable para verlas en grande */}
           <div className="relative w-full max-w-[240px] sm:max-w-[260px] aspect-[9/19] rounded-[2.25rem] border-[6px] border-white/10 bg-bg-light/70 overflow-hidden shadow-xl shadow-black/40">
             <div className="absolute left-1/2 top-2 z-10 h-1.5 w-16 -translate-x-1/2 rounded-full bg-black/60" />
 
             {screenshots.length > 0 ? (
               <>
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src={screenshots[index]}
-                      alt={`AlpaChange — captura ${index + 1} de ${screenshots.length}`}
-                      fill
-                      className="object-cover"
-                      sizes="260px"
-                    />
-                  </motion.div>
-                </AnimatePresence>
+                <button
+                  type="button"
+                  onClick={() => setLightboxOpen(true)}
+                  className="group absolute inset-0 z-0"
+                  aria-label="Ver captura en grande"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.35 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={screenshots[index]}
+                        alt={`AlpaChange — captura ${index + 1} de ${screenshots.length}`}
+                        fill
+                        className="object-cover"
+                        sizes="260px"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/30 group-hover:opacity-100">
+                    <ZoomIn className="h-6 w-6 text-white" />
+                  </div>
+                </button>
 
                 {screenshots.length > 1 && (
                   <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
@@ -108,6 +128,16 @@ export default function MobileSection() {
           </div>
         </motion.div>
       </div>
+
+      {lightboxOpen && (
+        <ImageLightbox
+          title="AlpaChange"
+          images={screenshots}
+          index={index}
+          onIndexChange={setIndex}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </div>
   );
 }
