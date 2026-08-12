@@ -24,16 +24,16 @@ const plexMono = IBM_Plex_Mono({
 });
 export const metadata: Metadata = {
   title: {
-    default: "Carlos Sebastian Calderon Vega | Web Full-Stack & Mobile",
-    template: "%s | Carlos Sebastian Calderon Vega"
+    default: "Carlos Calderón | Ingeniero de Software Full-Stack",
+    template: "%s | Carlos Calderón"
   },
-  description: "Desarrollador Web Full-Stack y Mobile en Lima, Perú. Performance, escalabilidad, CI/CD y nube para productos reales.",
-  keywords: ["Carlos Calderon", "desarrollador web full-stack", "desarrollador mobile", "Next.js", "React", "TypeScript", "Node.js", "CI/CD", "AWS", "performance web"],
+  description: "Ingeniero de software full-stack en Lima, Perú. Diseño arquitectura y construyo SaaS multitenant, POS y sistemas con IA: Next.js, TypeScript, Supabase.",
+  keywords: ["Carlos Calderon", "ingeniero de software", "desarrollador full-stack", "Next.js", "TypeScript", "Supabase", "arquitectura de software", "SaaS multitenant", "React", "IA aplicada", "Lima Perú"],
   metadataBase: new URL('https://www.carlos-calderon.site'),
   publisher: "Carlos Sebastian Calderon Vega",
   creator: "Carlos Sebastian Calderon Vega",
   icons: {
-    icon: '/favicon.ico', // Asegúrate que sea PNG
+    icon: '/favicon.ico',
     apple: '/favicon.ico',
   },
   authors: [{ name: "Carlos Sebastian Calderon Vega" }],
@@ -42,20 +42,26 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Carlos Sebastian Calderon Vega | Web Full-Stack & Mobile",
-    description: "Portafolio profesional con proyectos reales, métricas de impacto y enfoque en performance y escalabilidad.",
+    title: "Carlos Calderón | Ingeniero de Software Full-Stack",
+    description: "Diseño arquitectura y construyo SaaS multitenant, POS y sistemas con IA. Casos reales: Kardex360, Grupo Lopar, Arquitectos Salazar.",
     url: "https://www.carlos-calderon.site",
-    siteName: "Carlos Sebastian Calderon Vega",
+    siteName: "Carlos Calderón",
     images: [
       {
-        url: "https://www.carlos-calderon.site/favicon.ico",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Portafolio de Carlos Sebastian Calderon Vega"
+        alt: "Carlos Calderón — Ingeniero de software full-stack"
       }
     ],
     locale: "es_ES",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carlos Calderón | Ingeniero de Software Full-Stack",
+    description: "Diseño arquitectura y construyo SaaS multitenant, POS y sistemas con IA. Casos reales: Kardex360, Grupo Lopar, Arquitectos Salazar.",
+    images: ["/opengraph-image"],
   }
 };
 
@@ -83,8 +89,8 @@ export default function RootLayout({
               "url": "https://www.carlos-calderon.site",
               "logo": "https://www.carlos-calderon.site/favicon.ico",
               "image": "https://www.carlos-calderon.site/favicon.ico",
-              "jobTitle": "Desarrollador Web Full-Stack y Desarrollador Mobile",
-              "description": "Portafolio profesional con enfoque en performance, escalabilidad, CI/CD y despliegues en nube.",
+              "jobTitle": "Ingeniero de Software Full-Stack",
+              "description": "Diseño arquitectura de software y construyo sistemas SaaS multitenant, POS y plataformas con integraciones de IA usando Next.js, TypeScript y Supabase.",
               "sameAs": [
                 "https://github.com/Carloscv200313",
                 "https://www.linkedin.com/in/carlos-sebastian-calderon-vega-0a2586285/"
