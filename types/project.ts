@@ -1,110 +1,118 @@
-export type ProjectCategory = "Frontend" | "Backend" | "Fullstack"
+export type ProjectCategory = "Frontend" | "Backend" | "Fullstack" | "Mobile"
 
 export interface Project {
   id: string
   title: string
+  client?: string
   description: string
-  image: string
+  /** Rutas a imágenes en /public. La primera se usa como miniatura de la card; si hay más de una, el modal muestra carrusel. Si no hay ninguna, se muestra un placeholder con el nombre del proyecto. */
+  images?: string[]
   languages: string[]
-  url: string
+  /** URL pública funcionando (demo, landing, app). */
+  demoUrl?: string
+  /** Repositorio público en GitHub. */
+  repoUrl?: string
+  /** true = proyecto de cliente / código privado, sin repo ni demo pública. */
+  private?: boolean
   category: ProjectCategory
 }
 
 export const projects: Project[] = [
   {
-    "id": "1",
-    "title": "Sistema para una Panadería",
-    "description": "Este sistema web fue desarrollado para una panadería 🥐 que enfrentaba problemas de tiempo y gestión de insumos ⏳📦. Nuestro objetivo fue optimizar sus procesos mediante una plataforma que automatiza y organiza sus operaciones ⚙️📊. El sistema cuenta con un login 🔑 que permite a los empleados registrarse y acceder a su módulo correspondiente 👨‍🍳💼. Para garantizar la seguridad, cada ruta está protegida con Middleware 🔒 y los tokens JWT se almacenan en cookies 🍪. Un encargado de inventario 📋 gestiona los insumos, mientras que el mozo 🧑‍💼 registra los pedidos 📝, los cuales se reflejan automáticamente en la pantalla del cocinero 👨‍🍳 para su preparación. El pedido también se envía a caja 💰 para su facturación y pago. Una vez completado el pago, el inventario se actualiza automáticamente 🔄, asegurando un control preciso de los productos disponibles 📦📉. Tanto el cocinero como el encargado de inventario pueden bloquear un plato o insumo 🚫 cuando detectan escasez ⚠️. El sistema fue desarrollado con Next.js (React) 🚀, estilizado con Tailwind CSS 🎨 y utiliza SQL Server 🏛️ como base de datos local. Actualmente, se ejecuta en la computadora del restaurante 🖥️ sin depender de servicios en la nube ☁️, lo que reduce costos y facilita su implementación 📉✅.",
-    "image": "/GestionDeInventario.png",
-    "languages": ["React", "Next", "SQLserver", "TypeScript", "Tailwind"],
-    "url": "https://github.com/Carloscv200313/Gestion-BD",
-    "category": "Fullstack"
-  },
-  {
-    id: "2",
-    title: "𝐖𝐀𝐑𝐑𝐈𝐎𝐑 𝐏𝐈𝐆",
-    description: "🚀 Landing Page desarrollada para un negocio de distribución y venta de lechones 🐷. Su propósito principal es promocionar ofertas 🎉 y facilitar el contacto directo 📲 con el distribuidor. Se incorporó un botón 🔘 que redirige al WhatsApp de la empresa 💬, permitiendo a los clientes realizar sus compras de manera rápida y sencilla. 🛒✨",
-    image: "/WarriorPig.png",
-    languages: ["React.js", "TypeScript", "Tailwind"],
-    url: "https://warrior-pig.vercel.app/",
-    category: "Frontend",
-  },
-  
-  {
-    id: "3",
-    title: "ServiMach",
-    description: "Este proyecto fue desarrollado para un concurso universitario 🏆 en el que participé con un grupo de amigos 👨‍💻🤝, estando a cargo del funcionamiento de la plataforma 💻. Nuestro objetivo era mejorar el sistema de registro ✍️ y reforzar la seguridad 🔐, ya que permitía a los usuarios solicitar técnicos especializados 🛠️. Para garantizar una autenticación rigurosa, implementamos un proceso de verificación en tres etapas 🔍🔄: primero, se envía un código de verificación 🔢 al correo electrónico registrado 📧; luego, el usuario debe tomarse una foto en el momento del registro 📸 y subir una imagen de su DNI 🆔, comparándolas con AWS RekognitionClient ☁️🖼️ para validar su identidad (si la similitud es menor al 98.5%, el registro se rechaza ❌). Finalmente, se consulta en la base de datos de RENIEC 🗃️ para verificar si el individuo tiene antecedentes penales graves ⚠️, denegando el acceso en caso afirmativo 🚫. Este enfoque asegura un proceso de autenticación confiable ✅, permitiendo que solo empleados legítimos accedan a la plataforma 🔓👨‍💼.",
-    image: "/ServiMach.png",
-    languages: ["React.js", "TypeScript", "Tailwind","Next","AWS","Claudinary"],
-    url: "https://servi-mach.vercel.app/inicio",
-    category: "Backend",
-  },
-  {
-    "id": "4",
-    "title": "Proyecto Semana de Sistemas",
-    "description": "Este proyecto se realizó durante la Semana de Sistemas 🖥️ en mi universidad, en colaboración con la comunidad de programadores CHAPITEC 👨‍💻🤝. Tuve la oportunidad de participar como ponente 🎤 en las áreas de Backend y Frontend 🔄, donde expliqué la utilidad del framework Next.js ⚡ y las ventajas que ofrece para desarrollar proyectos escalables y seguros 🔐🚀. El taller contó con la asistencia de más de 40 estudiantes 🎓 de Ingeniería de Sistemas y carreras afines. Durante la sesión, trabajamos con tecnologías como React.js ⚛️, Tailwind CSS 🎨, TypeScript 🔠 y Prisma ORM 🔗, utilizando PostgreSQL 🗄️ como base de datos. Como parte del aprendizaje, desarrollamos un sistema CRUD 📄✏️ para la gestión de cursos y alumnos, aplicando buenas prácticas de desarrollo ✅.",
-    "image": "/ponencia-04.png",
-    "languages": ["React", "Next", "ORM", "Prisma", "SQL Postgres", "TypeScript", "Tailwind"],
-    "url": "https://github.com/Carloscv200313/Proyecto-Chapitec",
-    "category": "Fullstack"
-  },
-  {
-    id: "5",
-    title: "Nuestro Legado",
-    description: "Página web desarrollada como parte de un proyecto universitario 🎓 en el que fui líder y responsable 👨‍💻. Su objetivo es reflejar el recorrido 🛤️ que mis compañeros y yo tuvimos a lo largo de nuestros años en la universidad 🏫, mostrando nuestros proyectos, avances y aprendizajes 📚💡. Además, incluye recomendaciones 📢 para futuras generaciones interesadas en el mundo de la tecnología 💻🚀. Cada integrante comparte su experiencia en distintas áreas, como análisis de datos 📊, ciberseguridad 🔐, desarrollo web 🌐 y aplicaciones móviles 📱, entre otras. Como reconocimiento 🏆 a nuestro esfuerzo, la universidad tomó este proyecto como referencia 📖 y lo publicó en su página oficial 🌍 como testimonio del crecimiento y logros 🎯 de sus estudiantes.",
-    image: "/NuestroLegado.png",
-    languages: ["React.js", "TypeScript", "Tailwind"],
-    url: "https://nuestro-legado.vercel.app/",
-    category: "Frontend",
-  },{
-    id: "6",
-    title: "Sistema de Votaciones",
-    description: "Sistema desarrollado durante mis prácticas 🛠️ con sistemas WebSocket 🌐, creando un modelo CRUD en el que los usuarios pueden votar 🗳️, eliminar ❌ o crear bandas 🎸 en tiempo real ⏳. Cualquier persona que esté en la misma página puede ver los cambios reflejados de inmediato 🔄👀. El proyecto fue implementado con Node.js 🟢, Express 🚀 y la librería Socket.io 🔗 para garantizar una comunicación fluida y en tiempo real ⚡.",
-    image: "/Votaciones.png",
-    languages: ["React.js", "Node.js", "Tailwind","Socket.io","Express"],
-    url: "https://votacion-bandas.netlify.app/",
-    category: "Backend",
-  },
-  {
-    id: "7",
-    title: "Tic Tac Toe",
-    description: "🎮 He desarrollado un innovador juego de Tic-Tac-Toe Online, donde los jugadores pueden 👤 crear su propio usuario con credenciales seguras, 🎭 controlar un personaje asignado y ⚔️ enfrentarse a otros en combates en tiempo real. 📊 Además, el juego incluye un registro de victorias y derrotas para seguir el progreso de cada usuario. 🚀 Actualmente, sigue en constante mejora con nuevas funciones y optimizaciones para ofrecer la mejor experiencia posible. ¡Un clásico reinventado para desafiar tu estrategia! 🧠🔥",
-    image: "/michi.jpg",
-    languages: ["React.js", "Node.js", "Tailwind","Socket.io","Express"],
-    url: "https://juegomichi.netlify.app",
+    id: "kardex360",
+    title: "Kardex360",
+    client: "Caldex Solutions",
+    description:
+      "Arquitectura SaaS multitenant desde cero para inventario, ventas, compras y reportes. Aislamiento de datos por cliente vía Row Level Security desde la primera migración, capa de IA operativa detrás de un backend propio (sin SQL libre generado por el modelo) y escaneo de códigos de barra. Diseñado para escalar a nuevos tenants sin tocar el esquema.",
+    images: ["/kardex360-01.png", "/kardex360-02.png", "/kardex360-03.png"],
+    languages: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "OpenAI API", "Redis"],
+    demoUrl: "https://kardex360.vercel.app/",
     category: "Fullstack",
   },
   {
-    id: "8",
-    title: "Catalogo Virtual",
-    description: "💳 Proyecto desarrollado para explorar y comprender el funcionamiento de las pasarelas de pago 🏦💰. En este caso, se utilizó PayPal 🅿️ mediante su propia librería oficial, permitiendo realizar pagos directos de forma sencilla y segura ✅. Este proyecto surgió como una idea para su futura implementación en un sistema de eCommerce 🛒📦. Actualmente, el sistema se encuentra en pausa ⏸️ para evitar que las transacciones procesadas se reflejen en mi cuenta. Sin embargo, con un pequeño ajuste en el código 🖥️, puede activarse nuevamente y operar sin inconvenientes. 🚀",
-    image: "/Catalogo.jpg",
-    languages: ["React.js", "TypeScript", "Tailwind"],
-    url: "https://tienda-virtual-zeta.vercel.app/",
+    id: "grupo-lopar",
+    title: "Grupo Lopar",
+    client: "Grupo Lopar",
+    description:
+      "Plataforma de punto de venta y logística que unifica dos operaciones de negocio en un mismo dominio: ventas con niveles de precio y pagos divididos, caja con sesiones y cierre automático, y un módulo de logística con control de tanques, flota, conductores y despachos en tiempo real. Modelo de datos pensado para escalar a más sucursales sin duplicar lógica.",
+    images: ["/grupo-lopar-01.png", "/grupo-lopar-02.png", "/grupo-lopar-03.png"],
+    languages: ["React", "Vite", "TypeScript", "Supabase", "Gemini API", "Recharts"],
+    demoUrl: "https://www.grupolopar.com/",
+    category: "Fullstack",
+  },
+  {
+    id: "arquitectos-salazar",
+    title: "Arquitectos Salazar",
+    client: "Arquitectos Salazar",
+    description:
+      "Sistema de gestión interna con autenticación y control de acceso por roles y permisos diseñado a medida, motor de distribución financiera automático por área de proyecto (propuesta, modelado 3D, planos, render) y trazabilidad de obras, pedidos y finanzas en un mismo modelo de dominio.",
+    images: ["/arquitectos-salazar-01.png", "/arquitectos-salazar-02.png", "/arquitectos-salazar-03.png"],
+    languages: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "Zod"],
+    demoUrl: "https://arquitectos-salazar.vercel.app/",
+    category: "Fullstack",
+  },
+  {
+    id: "caudal",
+    title: "Caudal",
+    description:
+      "Sistema de finanzas personales con detección automática de movimientos vía Gmail API (OAuth de solo lectura), tokens cifrados con AES-256-GCM y capa de autenticación propia con bcrypt y JWT. Ingresos, egresos, presupuestos y metas de ahorro sobre un modelo de datos pensado para crecer a multi-cuenta.",
+    images: ["/caudal-01.png", "/caudal-02.png", "/caudal-03.png"],
+    languages: ["Next.js 16", "TypeScript", "Supabase", "Gmail API", "Recharts", "Zod"],
+    demoUrl: "https://caudal-black.vercel.app/",
+    category: "Fullstack",
+  },
+  {
+    id: "mentes-creadoras",
+    title: "Mentes Creadoras",
+    description:
+      "Plataforma modular que integra múltiples dominios (tareas, entrenamiento, nutrición con IA) bajo una misma base de datos y capa de autenticación, con panel de administración para monitoreo de usuarios. Pensada para agregar nuevos módulos sin reescribir los existentes.",
+    images: ["/taks-01.png", "/taks-02.png", "/taks-03.png"],
+    languages: ["Next.js 16", "TypeScript", "Supabase", "IA (chat)", "Recharts"],
+    demoUrl: "https://codigo-abundante.vercel.app/login",
+    repoUrl: "https://github.com/Carloscv200313/MultiTaks",
+    category: "Fullstack",
+  },
+  {
+    id: "amatia-message-center",
+    title: "Amatia Message Center",
+    client: "Amatia / CodeLatin",
+    description:
+      "Centro de mensajería tipo Outlook con editor enriquecido (Lexical), calendario y tableros drag-and-drop, integrado con chat en tiempo real embebido sobre Rocket.Chat. Capa de datos vía GraphQL/Apollo con gestión de estado centralizada sobre una interfaz en Material UI.",
+    images: ["/messa-center-01.png", "/messa-center-02.png", "/messa-center-03.png"],
+    languages: ["React", "GraphQL", "Apollo", "Material UI", "Rocket.Chat"],
+    private: true,
     category: "Frontend",
   },
-
   {
-    id: "9",
-    title: "Sistema de Peliculas",
-    description: "🎬 Uno de mis primeros proyectos cuando comenzaba a aprender Node.js 🚀 y su conexión con bases de datos SQL 🗄️. Desarrollé un CRUD de películas 🎥 que permite crear, modificar, eliminar y visualizar películas, almacenando toda la información en una base de datos local 💾. Aunque es un proyecto sencillo ⚡, aplica los principios básicos de la programación estructurada en Node.js y me permitió comprender mejor su funcionamiento, sentando las bases para proyectos más avanzados. 🏗️👨‍💻",
-    image: "/Pelis.png",
-    languages: ["React.js", "Node.js", "Tailwind","Express","SQL Server"],
-    url: "/",
+    id: "caldex-landing",
+    title: "Caldex Solutions — Landing",
+    client: "Caldex Solutions",
+    description:
+      "Landing corporativa con animaciones 3D (Spline + react-three-fiber) y scroll suave, optimizada para performance y SEO como puerta de entrada a los productos de Caldex Solutions.",
+    images: ["/caldex-solutions-01.png", "/caldex-solutions-02.png", "/caldex-solutions-03.png"],
+    languages: ["Next.js", "TypeScript", "Three.js", "Framer Motion"],
+    demoUrl: "https://caldev-solutions.vercel.app/productos/resto",
+    repoUrl: "https://github.com/Carloscv200313/caldev-solutions",
+    category: "Frontend",
+  },
+  {
+    id: "servimach",
+    title: "ServiMach",
+    description:
+      "Plataforma para solicitar técnicos especializados con un flujo de registro reforzado por diseño: verificación en tres etapas (código por email, validación de identidad con comparación de imágenes y consulta de antecedentes) para reducir accesos no autorizados.",
+    images: ["/ServiMach.png"],
+    languages: ["React", "Next.js", "TypeScript", "Tailwind", "AWS", "Cloudinary"],
+    repoUrl: "https://github.com/Carloscv200313/servi-mach",
     category: "Backend",
   },
-
-]
-/*
-
   {
-    "id": "7",
-    "title": "Plataforma de cursos",
-    "description":"Proyecto desarrollado para una empresa 🏢 que necesitaba capacitar a sus empleados 👨‍🏭📚 mediante cursos específicos y evaluar sus conocimientos con exámenes de certificación 🎓. El sistema permite a los gerentes o encargados de los talleres monitorear el progreso 📊 de cada trabajador, verificar la realización de sus exámenes ✅, administrar sus calificaciones 📑 y controlar los intentos permitidos 🔄 para presentar la prueba. Para la gestión de contenido multimedia 🎥, el sistema utiliza Cloudinary ☁️ para el almacenamiento de videos, permitiendo ofrecer el servicio de forma gratuita 💰 sin costos adicionales. Fue desarrollado con Next.js ⚛️ tanto en el frontend como en el backend, utilizando SQL Server 🗄️ como base de datos relacional. Además, implementa medidas de seguridad 🔐 como middleware y JWT para la autenticación, almacenando los tokens en cookies 🍪 para una mayor protección de los datos.",
-    "image": "/Videos.png",
-    "languages": ["React", "Next", "SQLserver", "TypeScript", "Tailwind","Claudinary"],
-    "url": "https://github.com/Carloscv200313/Videos-con-Certificacion",
-    "category": "Fullstack"
+    id: "votaciones",
+    title: "Sistema de Votaciones",
+    description:
+      "Sistema en tiempo real con WebSocket y CRUD para votación y gestión de bandas, con propagación instantánea de cambios de estado a todos los clientes conectados.",
+    images: ["/Votaciones.png"],
+    languages: ["React", "Node.js", "Express", "Socket.io", "Tailwind"],
+    demoUrl: "https://votacion-bandas.netlify.app/",
+    category: "Backend",
   },
-
-*/
+]

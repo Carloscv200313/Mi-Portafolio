@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Carlos Calderón | Portfolio Profesional 🚀",
+  title: "Proyectos | Carlos Sebastian Calderon Vega",
   description:
-    "Soy Carlos Calderón, desarrollador fullstack especializado en React, Node.js y bases de datos. Descubre mis proyectos, experiencia y habilidades en programación moderna.",
+    "Proyectos reales de desarrollo web full-stack y mobile con foco en performance, escalabilidad y despliegues en nube.",
   keywords: [
-    "Carlos Calderón",
-    "Portfolio",
-    "Desarrollador Fullstack",
+    "Carlos Sebastian Calderon Vega",
+    "Proyectos",
+    "Desarrollador web full-stack",
+    "Desarrollador mobile",
     "React",
+    "TypeScript",
     "Node.js",
-    "SQL",
     "Next.js",
-    "GitHub",
-    "LinkedIn",
-    "Proyectos de programación",
+    "CI/CD",
+    "AWS",
   ],
   openGraph: {
-    title: "Portfolio de Carlos Calderón | Fullstack Developer 🚀",
+    title: "Proyectos | Carlos Sebastian Calderon Vega",
     description:
-      "Explora mis proyectos de desarrollo web, experiencia en frontend y backend, y conecta conmigo en LinkedIn o GitHub.",
+      "Explora proyectos reales de desarrollo web full-stack y mobile con enfoque en performance y escalabilidad.",
     url: "https://www.carlos-calderon.site/Proyectos",
-    siteName: "Carlos Calderón | Portfolio",
+    siteName: "Carlos Sebastian Calderon Vega | Portfolio",
     images: [
       {
         url: "https://www.carlos-calderon.site/icono.png", // crea un banner atractivo (1200x630 recomendado)

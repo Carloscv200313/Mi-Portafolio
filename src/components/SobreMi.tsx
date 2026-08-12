@@ -1,144 +1,86 @@
 "use client";
 import { motion } from "framer-motion";
-import { Code, Database, Github } from "lucide-react";
-import { FloatingPaper } from "@/components/floating-paper";
+import { Code2, Database, Blocks, Wrench } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { SparklesCore } from "./sparkles";
+
+const stacks = [
+  {
+    icon: Code2,
+    title: "Frontend",
+    items: ["TypeScript, JavaScript ES6+", "React, Next.js (App Router)", "Tailwind CSS, Framer Motion"],
+  },
+  {
+    icon: Database,
+    title: "Backend & datos",
+    items: ["Node.js, Express, Python", "Supabase / PostgreSQL, MySQL, SQL Server", "APIs REST, GraphQL, RLS"],
+  },
+  {
+    icon: Blocks,
+    title: "Arquitectura & patrones",
+    items: ["Multitenancy, RLS por diseño", "Auth propia, control de acceso por roles", "Modelado de dominio, capas de servicio"],
+  },
+  {
+    icon: Wrench,
+    title: "Herramientas & DevOps",
+    items: ["Git, GitHub Actions", "Docker, Docker Compose", "AWS (EC2, S3, RDS)"],
+  },
+];
 
 export default function SobreMi() {
-    const fadeIn = {
-        initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.5 },
-    };
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.3 },
+    transition: { duration: 0.5 },
+  };
 
-    return (
-        <div className="relative min-h-[60vh] flex flex-wrap items-center justify-center md:px-6">
-            {/* Fondo de íconos flotantes */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <FloatingPaper count={10} />
-            </div>
-            <div className="absolute inset-0 z-0">
-                <SparklesCore
-                    id="tsparticlesfullpage"
-                    background="transparent"
-                    minSize={0.5}
-                    maxSize={1.4}
-                    particleDensity={100}
-                    className="w-full h-full"
-                    particleColor="#FFFFFF"
-                />
-            </div>
+  return (
+    <div className="relative container mx-auto px-4 py-20 md:py-28">
+      <div className="pointer-events-none absolute -top-10 left-1/3 h-56 w-56 rounded-full bg-accent-blue/5 blur-3xl" />
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <motion.div {...fadeIn} className="space-y-5">
+          <p className="eyebrow">01 / Sobre mí</p>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary">
+            Ingeniería de producto,
+            <br />
+            no solo código.
+          </h2>
+          <p className="text-sm md:text-base leading-relaxed text-text-secondary max-w-xl">
+            Soy Carlos Sebastián Calderón Vega, desarrollador full-stack en Lima, Perú. Diseño e
+            implemento sistemas completos de punta a punta —modelado de dominio, arquitectura
+            multitenant, autenticación y control de acceso, integraciones con IA— para negocios reales:
+            distribuidoras, estudios de arquitectura, freelancers y SaaS propios. Priorizo decisiones de
+            arquitectura que sostengan el crecimiento del negocio: aislamiento de datos por diseño,
+            capas de servicio claras y sistemas que se puedan extender sin reescribirse. Fuera del
+            código, fundé y lidero <span className="text-text-primary">CHAPITEC</span>, una comunidad
+            universitaria de programación con más de 500 miembros.
+          </p>
+        </motion.div>
 
-            <div className="relative w-full flex flex-col lg:flex-row justify-center lg:gap-10 z-10 text-center">
-                {/* Primera columna */}
-                <div className="w-full xl:w-1/2 flex items-center justify-center md:px-4 lg:px-0">
-                    <div className="text-white py-16 px-4 sm:px-6">
-                        <motion.div
-                            className="max-w-4xl mx-auto space-y-12"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            {/* Encabezado */}
-                            <motion.div className="space-y-4" {...fadeIn}>
-                                <h2 className="mb-10 text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 via-sky-400 to-red-950">
-                                    Sobre Mí
-                                </h2>
-                                <p className="md:text-base lg:text-lg lg:text-start  text-sm leading-relaxed">
-                                    Soy estudiante de sexto ciclo de{" "}
-                                    <span className="font-semibold text-blue-400">
-                                        Ingeniería de Sistemas
-                                    </span>
-                                    , con un fuerte compromiso con la excelencia académica,
-                                    formando parte del{" "}
-                                    <span className="font-semibold text-blue-400">
-                                        tercio superior
-                                    </span>
-                                    . He representado a mi universidad en{" "}
-                                    <span className="font-semibold text-blue-400">
-                                        congresos nacionales
-                                    </span>
-                                    , como <span className="font-semibold text-blue-400">CONEIMERA</span>, e{" "}
-                                    <span className="font-semibold text-blue-400">internacionales</span>, como{" "}
-                                    <span className="font-semibold text-blue-400">CIMPS</span>, donde he tenido
-                                    la oportunidad de compartir conocimientos y aprender de
-                                    expertos en tecnología.
-                                    He trabajado en diversos proyectos como{" "}
-                                    <span className="font-semibold text-blue-400">freelancer</span>,
-                                    enfrentando desafíos reales y desarrollando soluciones innovadoras.
-                                    Mi pasión por la programación me ha llevado a destacar en{" "}
-                                    <span className="font-semibold text-blue-400">
-                                        concursos de programación competitiva
-                                    </span>, donde he puesto a prueba mis habilidades en resolución de problemas y optimización de código.
-                                    Además, he sido{" "}
-                                    <span className="font-semibold text-blue-400">ponente en el área de desarrollo web</span>,
-                                    participando activamente en una{" "}
-                                    <span className="font-semibold text-blue-400">
-                                        organización de desarrolladores
-                                    </span>
-                                    dedicada a compartir conocimientos y fomentar el aprendizaje en la comunidad tecnológica.
-                                    Mi objetivo es seguir creciendo, innovando y generando impacto a través de la tecnología. 🚀
-                                </p>
-
-
-                            </motion.div>
-                        </motion.div>
-                    </div>
-                </div>
-
-                {/* Segunda columna */}
-                <div className="w-full xl:w-1/2 flex items-center justify-center px-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6">
-                        {/* Frontend Card */}
-                        <motion.div {...fadeIn} transition={{ delay: 0.2 }}>
-                            <Card className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/50 transition-all">
-                                <CardContent className="p-6 space-y-4">
-                                    <div className="flex items-center gap-3">
-                                        <Code className="h-6 w-6 text-yellow-400" />
-                                        <h2 className="text-xl font-semibold">Frontend</h2>
-                                    </div>
-                                    <ul className="space-y-2 text-gray-200">
-                                        <li>HTML, CSS, JavaScript, TypeScript</li>
-                                        <li>Tailwind, React, Vue, Next.js</li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-
-                        {/* Backend Card */}
-                        <motion.div {...fadeIn} transition={{ delay: 0.3 }}>
-                            <Card className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/50 transition-all">
-                                <CardContent className="p-6 space-y-4">
-                                    <div className="flex items-center gap-3">
-                                        <Database className="h-6 w-6 text-yellow-400" />
-                                        <h2 className="text-xl font-semibold">Backend & Bases de Datos</h2>
-                                    </div>
-                                    <ul className="space-y-2 text-gray-200">
-                                        <li>Node.js, Express</li>
-                                        <li>MongoDB, SQL Server</li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-
-                        {/* Tools Card */}
-                        <motion.div {...fadeIn} transition={{ delay: 0.4 }}>
-                            <Card className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/50 transition-all">
-                                <CardContent className="p-6 space-y-4">
-                                    <div className="flex items-center gap-3">
-                                        <Github className="h-6 w-6 text-yellow-400" />
-                                        <h2 className="text-xl font-semibold">Herramientas & Control de Versiones</h2>
-                                    </div>
-                                    <ul className="space-y-2 text-gray-200">
-                                        <li>Git & GitHub</li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    </div>
-                </div>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {stacks.map((s, i) => (
+            <motion.div
+              key={s.title}
+              {...fadeIn}
+              transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
+            >
+              <Card className="bg-bg-light/70 backdrop-blur border border-white/10 text-text-primary transition-all hover:border-accent-blue/40 hover:-translate-y-1 h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <s.icon className="h-5 w-5 text-accent-blue" />
+                    <h3 className="font-display text-lg font-semibold">{s.title}</h3>
+                  </div>
+                  <ul className="space-y-1.5 text-sm text-text-secondary">
+                    {s.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 }

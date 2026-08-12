@@ -70,8 +70,21 @@ export default function SplashCursor({
     TRANSPARENT = true
 }: SplashCursorProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    // Efecto decorativo pesado (WebGL a pantalla completa, z-50 por encima de todo).
+    // En mobile/touch causa pantallas en blanco y consume batería/GPU sin aportar nada
+    // (no hay cursor persistente en touch) — se desactiva por completo ahí.
+    const [enabled, setEnabled] = React.useState(false);
 
     useEffect(() => {
+        const mq = window.matchMedia("(pointer: fine) and (min-width: 768px)");
+        setEnabled(mq.matches);
+        const onChange = () => setEnabled(mq.matches);
+        mq.addEventListener("change", onChange);
+        return () => mq.removeEventListener("change", onChange);
+    }, []);
+
+    useEffect(() => {
+        if (!enabled) return;
         const canvas = canvasRef.current;
         if (!canvas) return; // Guard canvas early
 
@@ -1523,6 +1536,7 @@ export default function SplashCursor({
         });
         // ------------------------------------------------------------
     }, [
+        enabled,
         SIM_RESOLUTION,
         DYE_RESOLUTION,
         CAPTURE_RESOLUTION,
@@ -1538,6 +1552,8 @@ export default function SplashCursor({
         BACK_COLOR,
         TRANSPARENT,
     ]);
+
+    if (!enabled) return null;
 
     return (
         <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">

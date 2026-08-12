@@ -9,6 +9,11 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-sans)", "ui-sans-serif", "system-ui"],
+				display: ["var(--font-display)", "var(--font-sans)", "ui-sans-serif"],
+				mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular"],
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -50,19 +55,12 @@ export default {
 					"4": "hsl(var(--chart-4))",
 					"5": "hsl(var(--chart-5))",
 				},
-				"bg-dark": "#000000",
-				"bg-light": "#111111",
-				"text-primary": "#ffffff",
-				"text-secondary": "#a0aec0",
-				"accent-blue": "#60a5fa",
-				"accent-green": "#4ade80",
-			},
-			backgroundImage: {
-				"gradient-primary": "linear-gradient(to right, var(--tw-gradient-stops))",
-			},
-			gradientColorStops: {
-				"blue-start": "#60a5fa",
-				"green-end": "#4ade80",
+				"bg-dark": "#0a0a08",
+				"bg-light": "#151412",
+				"text-primary": "#f3f1ea",
+				"text-secondary": "#96938b",
+				"accent-blue": "#d6ff3f",
+				"accent-green": "#ff8a3d",
 			},
 			borderRadius: {
 				lg: "var(--radius)",

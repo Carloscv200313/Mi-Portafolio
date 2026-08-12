@@ -1,30 +1,31 @@
 import ContactoOscuroMejorado from "@/components/contacto-oscuro-mejorado";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Contáctanos | Tu Aliado Digital en Soluciones Web",
+  title: "Contacto | Carlos Sebastian Calderon Vega",
   description:
-    "Conéctate con nuestro equipo de expertos en desarrollo web, diseño y soluciones digitales. Estamos listos para ayudarte a impulsar tu negocio con innovación y tecnología.",
+    "Hablemos sobre tu producto: desarrollo web full-stack y mobile con foco en performance, escalabilidad y despliegues en nube.",
   keywords: [
     "contacto",
-    "desarrollo web",
-    "diseño web",
-    "soluciones digitales",
-    "consultoría tecnológica",
-    "contactar empresa digital",
-    "servicios TI",
+    "desarrollador web full-stack",
+    "desarrollador mobile",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "AWS",
   ],
   openGraph: {
-    title: "Contáctanos | Tu Aliado Digital en Soluciones Web",
+    title: "Contacto | Carlos Sebastian Calderon Vega",
     description:
-      "Habla con nuestro equipo de expertos en desarrollo web y soluciones digitales. Transformamos tu visión en resultados reales.",
+      "Hablemos sobre tu producto: performance, escalabilidad, CI/CD y despliegues en nube.",
     url: "https://www.carlos-calderon.site/Contacto",
-    siteName: "Tu Empresa",
+    siteName: "Carlos Sebastian Calderon Vega",
     images: [
       {
         url: "https://www.carlos-calderon.site/icono.png", // coloca tu logo o una imagen optimizada
         width: 1200,
         height: 630,
-        alt: "Contáctanos - Tu Aliado Digital",
+        alt: "Contacto - Carlos Sebastian Calderon Vega",
       },
     ],
     locale: "es_ES",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contáctanos | Tu Aliado Digital en Soluciones Web",
+    title: "Contacto | Carlos Sebastian Calderon Vega",
     description:
-      "Conéctate con nosotros y lleva tu proyecto al siguiente nivel con soluciones digitales innovadoras.",
+      "Hablemos sobre tu producto y cómo escalarlo con arquitectura moderna.",
     images: ["https://www.carlos-calderon.site/logo.png"],
   },
   alternates: {

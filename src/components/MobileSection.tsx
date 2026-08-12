@@ -1,0 +1,113 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+
+const screenshots: string[] = [
+  "/apachange-01.jpeg",
+  "/apachange-02.jpeg",
+  "/apachange-03.jpeg",
+  "/apachange-04.jpeg",
+];
+
+export default function MobileSection() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (screenshots.length < 2) return;
+    const id = setInterval(() => setIndex((i) => (i + 1) % screenshots.length), 3200);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="relative container mx-auto px-4 py-20 md:py-28">
+      <div className="pointer-events-none absolute -bottom-10 right-10 h-52 w-52 rounded-full bg-accent-green/5 blur-3xl" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="eyebrow mb-3">07 / Mobile</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-text-primary">
+            También en móvil
+          </h2>
+          <p className="text-text-secondary mb-1 leading-relaxed">
+            <span className="text-text-primary font-semibold">AlpaChange</span> — app nativa en
+            Kotlin para reportar y gestionar incidencias de infraestructura académica en tiempo
+            real, desarrollada para la UNTELS.
+          </p>
+          <p className="text-text-secondary mb-6 leading-relaxed">
+            Login institucional, reportes con foto y ubicación en mapa, notificaciones, roles
+            (estudiante/docente/administrador) y sincronización en segundo plano.
+          </p>
+          <ul className="text-text-secondary space-y-2 text-sm md:text-base font-mono">
+            <li>&gt; Firebase Auth, Realtime Database y Cloud Messaging</li>
+            <li>&gt; Reportes con foto (Cloudinary) y mapa (OpenStreetMap)</li>
+            <li>&gt; Servicio en segundo plano con sincronización en tiempo real</li>
+          </ul>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center"
+        >
+          {/* Marco tipo celular: capturas verticales rotando */}
+          <div className="relative w-full max-w-[240px] sm:max-w-[260px] aspect-[9/19] rounded-[2.25rem] border-[6px] border-white/10 bg-bg-light/70 overflow-hidden shadow-xl shadow-black/40">
+            <div className="absolute left-1/2 top-2 z-10 h-1.5 w-16 -translate-x-1/2 rounded-full bg-black/60" />
+
+            {screenshots.length > 0 ? (
+              <>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={screenshots[index]}
+                      alt={`AlpaChange — captura ${index + 1} de ${screenshots.length}`}
+                      fill
+                      className="object-cover"
+                      sizes="260px"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {screenshots.length > 1 && (
+                  <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
+                    {screenshots.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        aria-label={`Ir a captura ${i + 1}`}
+                        onClick={() => setIndex(i)}
+                        className={`h-1.5 rounded-full transition-all ${i === index ? "w-4 bg-accent-blue" : "w-1.5 bg-white/50"
+                          }`}
+                      />
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-grid-white/[0.02] px-6 text-center">
+                <span className="font-display text-lg font-bold text-text-primary/90">
+                  AlpaChange
+                </span>
+                <span className="text-xs text-text-secondary">Capturas próximamente</span>
+              </div>
+            )}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}

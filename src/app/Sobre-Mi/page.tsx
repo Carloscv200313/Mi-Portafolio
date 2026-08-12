@@ -2,33 +2,33 @@ import type { Metadata } from "next";
 import SobreMi from "@/components/SobreMi";
 
 export const metadata: Metadata = {
-  title: "Sobre mí | Carlos Sebastián Calderón Vega",
+  title: "Sobre mí | Carlos Sebastian Calderon Vega",
   description:
-    "Conoce a Carlos Sebastián Calderón Vega, desarrollador full stack apasionado por crear soluciones innovadoras en la web, con experiencia en React, Node.js, SQL Server y proyectos de inteligencia artificial.",
+    "Conoce a Carlos Sebastian Calderon Vega, desarrollador web full-stack y mobile enfocado en performance, escalabilidad, CI/CD y nube.",
   keywords: [
-    "Carlos Sebastián Calderón Vega",
+    "Carlos Sebastian Calderon Vega",
     "Sobre mí",
-    "Desarrollador full stack",
+    "Desarrollador web full-stack",
+    "Desarrollador mobile",
     "React",
     "Node.js",
-    "SQL Server",
+    "TypeScript",
     "Next.js",
-    "Inteligencia Artificial",
-    "Programación",
-    "Portfolio desarrollador",
+    "CI/CD",
+    "AWS",
   ],
   openGraph: {
-    title: "Sobre mí | Carlos Sebastián Calderón Vega",
+    title: "Sobre mí | Carlos Sebastian Calderon Vega",
     description:
-      "Soy un desarrollador full stack con experiencia en frontend y backend, apasionado por el aprendizaje constante y la construcción de proyectos tecnológicos innovadores.",
+      "Desarrollador web full-stack y mobile con foco en performance, escalabilidad y despliegues en nube.",
     url: "https://www.carlos-calderon.site/Sobre-Mi",
-    siteName: "Portfolio de Carlos Calderón",
+    siteName: "Portfolio de Carlos Sebastian Calderon Vega",
     images: [
       {
         url: "https://www.carlos-calderon.site/icono.png", // <-- puedes cambiarlo por una imagen tuya real
         width: 1200,
         height: 630,
-        alt: "Sobre mí - Carlos Calderón",
+        alt: "Sobre mí - Carlos Sebastian Calderon Vega",
       },
     ],
     locale: "es_ES",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.carlos-calderon.site/Sobre-Mi",
   },
-  authors: [{ name: "Carlos Sebastián Calderón Vega" }],
+  authors: [{ name: "Carlos Sebastian Calderon Vega" }],
   robots: {
     index: true,
     follow: true,
