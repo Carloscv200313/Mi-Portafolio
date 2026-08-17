@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description:
       "Arquitectura SaaS multitenant desde cero para inventario, ventas, compras y reportes. Aislamiento de datos por cliente vía Row Level Security desde la primera migración, capa de IA operativa detrás de un backend propio (sin SQL libre generado por el modelo) y escaneo de códigos de barra. Diseñado para escalar a nuevos tenants sin tocar el esquema.",
     images: ["/kardex360-01.png", "/kardex360-02.png", "/kardex360-03.png"],
-    languages: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "OpenAI API", "Redis"],
+    languages: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "OpenAI API", "Redis"],
     demoUrl: "https://kardex360.vercel.app/",
     category: "Fullstack",
   },
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     description:
       "Plataforma de punto de venta y logística que unifica dos operaciones de negocio en un mismo dominio: ventas con niveles de precio y pagos divididos, caja con sesiones y cierre automático, y un módulo de logística con control de tanques, flota, conductores y despachos en tiempo real. Modelo de datos pensado para escalar a más sucursales sin duplicar lógica.",
     images: ["/grupo-lopar-01.png", "/grupo-lopar-02.png", "/grupo-lopar-03.png"],
-    languages: ["React", "Vite", "TypeScript", "Supabase", "Gemini API", "Recharts"],
+    languages: ["React", "Vite", "TypeScript", "Node.js", "PostgreSQL", "Gemini API"],
     demoUrl: "https://www.grupolopar.com/",
     category: "Fullstack",
   },
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     description:
       "Sistema de gestión interna con autenticación y control de acceso por roles y permisos diseñado a medida, motor de distribución financiera automático por área de proyecto (propuesta, modelado 3D, planos, render) y trazabilidad de obras, pedidos y finanzas en un mismo modelo de dominio.",
     images: ["/arquitectos-salazar-01.png", "/arquitectos-salazar-02.png", "/arquitectos-salazar-03.png"],
-    languages: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "Zod"],
+    languages: ["Next.js 16", "TypeScript", "Node.js", "PostgreSQL", "Zod"],
     demoUrl: "https://arquitectos-salazar.vercel.app/",
     category: "Fullstack",
   },
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     description:
       "Sistema de finanzas personales con detección automática de movimientos vía Gmail API (OAuth de solo lectura), tokens cifrados con AES-256-GCM y capa de autenticación propia con bcrypt y JWT. Ingresos, egresos, presupuestos y metas de ahorro sobre un modelo de datos pensado para crecer a multi-cuenta.",
     images: ["/caudal-01.png", "/caudal-02.png", "/caudal-03.png"],
-    languages: ["Next.js 16", "TypeScript", "Supabase", "Gmail API", "Recharts", "Zod"],
+    languages: ["Next.js 16", "TypeScript", "Node.js", "PostgreSQL", "Gmail API", "Zod"],
     demoUrl: "https://caudal-black.vercel.app/",
     category: "Fullstack",
   },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     description:
       "Plataforma modular que integra múltiples dominios (tareas, entrenamiento, nutrición con IA) bajo una misma base de datos y capa de autenticación, con panel de administración para monitoreo de usuarios. Pensada para agregar nuevos módulos sin reescribir los existentes.",
     images: ["/taks-01.png", "/taks-02.png", "/taks-03.png"],
-    languages: ["Next.js 16", "TypeScript", "Supabase", "IA (chat)", "Recharts"],
+    languages: ["Next.js 16", "TypeScript", "Node.js", "PostgreSQL", "IA (chat)"],
     demoUrl: "https://codigo-abundante.vercel.app/login",
     repoUrl: "https://github.com/Carloscv200313/MultiTaks",
     category: "Fullstack",

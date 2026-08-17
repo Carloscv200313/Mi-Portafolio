@@ -57,7 +57,7 @@ export default async function Image() {
             marginTop: 44,
           }}
         >
-          {["Next.js", "TypeScript", "Supabase", "IA"].map((tag) => (
+          {["Next.js", "TypeScript", "Node.js", "IA"].map((tag) => (
             <div
               key={tag}
               style={{

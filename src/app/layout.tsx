@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     default: "Carlos Calderón | Ingeniero de Software Full-Stack",
     template: "%s | Carlos Calderón"
   },
-  description: "Ingeniero de software full-stack en Lima, Perú. Diseño arquitectura y construyo SaaS multitenant, POS y sistemas con IA: Next.js, TypeScript, Supabase.",
-  keywords: ["Carlos Calderon", "ingeniero de software", "desarrollador full-stack", "Next.js", "TypeScript", "Supabase", "arquitectura de software", "SaaS multitenant", "React", "IA aplicada", "Lima Perú"],
+  description: "Ingeniero de software full-stack en Lima, Perú. Diseño arquitectura y construyo SaaS multitenant, POS y sistemas con IA: Next.js, TypeScript, Node.js.",
+  keywords: ["Carlos Calderon", "ingeniero de software", "desarrollador full-stack", "Next.js", "TypeScript", "Node.js", "arquitectura de software", "SaaS multitenant", "React", "IA aplicada", "Lima Perú"],
   metadataBase: new URL('https://carlos-calderon.vercel.app'),
   publisher: "Carlos Sebastian Calderon Vega",
   creator: "Carlos Sebastian Calderon Vega",
@@ -91,7 +91,7 @@ export default function RootLayout({
               "logo": "https://carlos-calderon.vercel.app/favicon.ico",
               "image": "https://carlos-calderon.vercel.app/favicon.ico",
               "jobTitle": "Ingeniero de Software Full-Stack",
-              "description": "Diseño arquitectura de software y construyo sistemas SaaS multitenant, POS y plataformas con integraciones de IA usando Next.js, TypeScript y Supabase.",
+              "description": "Diseño arquitectura de software y construyo sistemas SaaS multitenant, POS y plataformas con integraciones de IA usando Next.js, TypeScript y Node.js.",
               "sameAs": [
                 "https://github.com/Carloscv200313",
                 "https://www.linkedin.com/in/carlos-sebastian-calderon-vega-0a2586285/"
