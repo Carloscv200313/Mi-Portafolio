@@ -107,7 +107,7 @@ const es: Dictionary = {
     contacto: "Contacto",
   },
   hero: {
-    badge: "Disponible para nuevos proyectos — Lima, Perú",
+    badge: "Disponible para nuevos proyectos en Lima, Perú",
     titleLine1: "Carlos Calderón,",
     titleHighlight: "ingeniero",
     titleLine2: "de software full-stack.",
@@ -122,7 +122,7 @@ const es: Dictionary = {
     eyebrow: "01 / Sobre mí",
     heading1: "Ingeniería de producto,",
     heading2: "no solo código.",
-    bio: "Soy Carlos Sebastián Calderón Vega, desarrollador full-stack en Lima, Perú. Diseño e implemento sistemas completos de punta a punta —modelado de dominio, arquitectura multitenant, autenticación y control de acceso, integraciones con IA— para negocios reales: distribuidoras, estudios de arquitectura, freelancers y SaaS propios. Priorizo decisiones de arquitectura que sostengan el crecimiento del negocio: aislamiento de datos por diseño, capas de servicio claras y sistemas que se puedan extender sin reescribirse. Fuera del código, fundé y lidero",
+    bio: "Soy Carlos Sebastián Calderón Vega, desarrollador full-stack en Lima, Perú. Diseño e implemento sistemas completos de punta a punta (modelado de dominio, arquitectura multitenant, autenticación y control de acceso, integraciones con IA) para negocios reales: distribuidoras, estudios de arquitectura, freelancers y SaaS propios. Priorizo decisiones de arquitectura que sostengan el crecimiento del negocio: aislamiento de datos por diseño, capas de servicio claras y sistemas que se puedan extender sin reescribirse. Fuera del código, fundé y lidero",
     chapitecName: "CHAPITEC",
     communitySuffix: ", una comunidad universitaria de programación con más de 500 miembros.",
     stacks: [
@@ -159,7 +159,7 @@ const es: Dictionary = {
     heading: "Experiencia",
     items: [
       {
-        title: "CHAPITEC — Fundador, Organizador y Ponente Técnico",
+        title: "CHAPITEC, Fundador, Organizador y Ponente Técnico",
         period: "Ene 2023 – Presente",
         bullets: [
           "Comunidad con 500+ miembros y 15+ eventos técnicos.",
@@ -170,7 +170,7 @@ const es: Dictionary = {
         ],
       },
       {
-        title: "Desarrollador Full Stack (Prácticas) — Expertis",
+        title: "Desarrollador Full Stack (Prácticas), Expertis",
         period: "Mar 2025 – Dic 2025",
         bullets: [
           "-40% tiempo de carga con lazy loading y code splitting en React.",
@@ -181,7 +181,7 @@ const es: Dictionary = {
         ],
       },
       {
-        title: "Freelance — Proyectos para clientes y productos propios",
+        title: "Freelance, Proyectos para clientes y productos propios",
         period: "2024 – Presente",
         bullets: [
           "SaaS multitenant de inventario (Kardex360) con RLS e IA operativa.",
@@ -238,7 +238,7 @@ const es: Dictionary = {
     ctaLive: "Ver proyecto en vivo",
     ctaCode: "Ver código en GitHub",
     privateCode: "Código privado",
-    privateCodeClient: "Código privado — proyecto de cliente",
+    privateCodeClient: "Código privado (proyecto de cliente)",
     zoomHint: "Ver imagen en grande",
   },
   projects: {
@@ -277,7 +277,7 @@ const es: Dictionary = {
         "Centro de mensajería tipo Outlook con editor enriquecido (Lexical), calendario y tableros drag-and-drop, integrado con chat en tiempo real embebido sobre Rocket.Chat. Capa de datos vía GraphQL/Apollo con gestión de estado centralizada sobre una interfaz en Material UI.",
     },
     "caldex-landing": {
-      title: "Caldex Solutions — Landing",
+      title: "Caldex Solutions: Landing",
       client: "Caldex Solutions",
       description:
         "Landing corporativa con animaciones 3D (Spline + react-three-fiber) y scroll suave, optimizada para performance y SEO como puerta de entrada a los productos de Caldex Solutions.",
@@ -309,7 +309,7 @@ const es: Dictionary = {
     appName: "AlpaChange",
     bio1Pre: "",
     bio1Post:
-      " — app nativa en Kotlin para reportar y gestionar incidencias de infraestructura académica en tiempo real, desarrollada para la UNTELS.",
+      ", app nativa en Kotlin para reportar y gestionar incidencias de infraestructura académica en tiempo real, desarrollada para la UNTELS.",
     bio2: "Login institucional, reportes con foto y ubicación en mapa, notificaciones, roles (estudiante/docente/administrador) y sincronización en segundo plano.",
     bullets: [
       "Firebase Auth, Realtime Database y Cloud Messaging",
@@ -324,7 +324,7 @@ const es: Dictionary = {
     description:
       "¿Listo para lanzar o escalar tu producto? Estoy disponible en remoto o híbrido desde Lima, Perú. Escribime por el formulario o directo por acá.",
     availability: "Disponible para nuevos proyectos",
-    location: "Lima, Perú — remoto / híbrido",
+    location: "Lima, Perú (remoto / híbrido)",
     formTitle: "Envíame un mensaje",
     namePlaceholder: "Nombre",
     emailPlaceholder: "Correo electrónico",
@@ -344,7 +344,7 @@ const en: Dictionary = {
     contacto: "Contact",
   },
   hero: {
-    badge: "Available for new projects — Lima, Peru",
+    badge: "Available for new projects in Lima, Peru",
     titleLine1: "Carlos Calderón,",
     titleHighlight: "software engineer",
     titleLine2: "full-stack.",
@@ -359,7 +359,7 @@ const en: Dictionary = {
     eyebrow: "01 / About me",
     heading1: "Product engineering,",
     heading2: "not just code.",
-    bio: "I'm Carlos Sebastián Calderón Vega, a full-stack developer based in Lima, Peru. I design and build complete systems end to end — domain modeling, multitenant architecture, authentication and access control, AI integrations — for real businesses: distributors, architecture firms, freelancers and my own SaaS products. I prioritize architecture decisions that support business growth: data isolation by design, clear service layers, and systems that can be extended without being rewritten. Outside of code, I founded and lead",
+    bio: "I'm Carlos Sebastián Calderón Vega, a full-stack developer based in Lima, Peru. I design and build complete systems end to end (domain modeling, multitenant architecture, authentication and access control, AI integrations) for real businesses: distributors, architecture firms, freelancers and my own SaaS products. I prioritize architecture decisions that support business growth: data isolation by design, clear service layers, and systems that can be extended without being rewritten. Outside of code, I founded and lead",
     chapitecName: "CHAPITEC",
     communitySuffix: ", a university programming community with 500+ members.",
     stacks: [
@@ -396,7 +396,7 @@ const en: Dictionary = {
     heading: "Experience",
     items: [
       {
-        title: "CHAPITEC — Founder, Organizer & Technical Speaker",
+        title: "CHAPITEC, Founder, Organizer & Technical Speaker",
         period: "Jan 2023 – Present",
         bullets: [
           "Community with 500+ members and 15+ technical events.",
@@ -407,7 +407,7 @@ const en: Dictionary = {
         ],
       },
       {
-        title: "Full Stack Developer (Internship) — Expertis",
+        title: "Full Stack Developer (Internship), Expertis",
         period: "Mar 2025 – Dec 2025",
         bullets: [
           "-40% load time with lazy loading and code splitting in React.",
@@ -418,7 +418,7 @@ const en: Dictionary = {
         ],
       },
       {
-        title: "Freelance — Client projects and own products",
+        title: "Freelance, Client projects and own products",
         period: "2024 – Present",
         bullets: [
           "Multitenant inventory SaaS (Kardex360) with RLS and AI operations.",
@@ -475,7 +475,7 @@ const en: Dictionary = {
     ctaLive: "View live project",
     ctaCode: "View code on GitHub",
     privateCode: "Private code",
-    privateCodeClient: "Private code — client project",
+    privateCodeClient: "Private code (client project)",
     zoomHint: "View larger image",
   },
   projects: {
@@ -514,7 +514,7 @@ const en: Dictionary = {
         "Outlook-style messaging hub with a rich text editor (Lexical), calendar and drag-and-drop boards, integrated with real-time chat embedded via Rocket.Chat. GraphQL/Apollo data layer with centralized state management on a Material UI interface.",
     },
     "caldex-landing": {
-      title: "Caldex Solutions — Landing",
+      title: "Caldex Solutions: Landing",
       client: "Caldex Solutions",
       description:
         "Corporate landing page with 3D animations (Spline + react-three-fiber) and smooth scroll, optimized for performance and SEO as the entry point to Caldex Solutions' products.",
@@ -546,7 +546,7 @@ const en: Dictionary = {
     appName: "AlpaChange",
     bio1Pre: "",
     bio1Post:
-      " — native Kotlin app to report and manage academic infrastructure incidents in real time, built for UNTELS.",
+      ", native Kotlin app to report and manage academic infrastructure incidents in real time, built for UNTELS.",
     bio2: "Institutional login, reports with photo and map location, notifications, roles (student/faculty/admin) and background sync.",
     bullets: [
       "Firebase Auth, Realtime Database and Cloud Messaging",
@@ -561,7 +561,7 @@ const en: Dictionary = {
     description:
       "Ready to launch or scale your product? I'm available remote or hybrid from Lima, Peru. Reach out through the form or directly below.",
     availability: "Available for new projects",
-    location: "Lima, Peru — remote / hybrid",
+    location: "Lima, Peru (remote / hybrid)",
     formTitle: "Send me a message",
     namePlaceholder: "Name",
     emailPlaceholder: "Email",

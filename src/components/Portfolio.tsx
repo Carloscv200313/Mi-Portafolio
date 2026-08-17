@@ -103,7 +103,7 @@ function ProjectGallery({
           >
             <Image
               src={images[index]}
-              alt={`${project.title} — ${index + 1} / ${images.length}`}
+              alt={`${project.title} (${index + 1} / ${images.length})`}
               fill
               className="object-cover"
             />

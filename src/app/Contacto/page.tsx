@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: "Contacto | Carlos Sebastian Calderon Vega",
     description:
       "Hablemos sobre tu producto: performance, escalabilidad, CI/CD y despliegues en nube.",
-    url: "https://www.carlos-calderon.site/Contacto",
+    url: "https://carlos-calderon.vercel.app/Contacto",
     siteName: "Carlos Sebastian Calderon Vega",
     images: [
       {
-        url: "https://www.carlos-calderon.site/icono.png", // coloca tu logo o una imagen optimizada
+        url: "https://carlos-calderon.vercel.app/icono.png", // coloca tu logo o una imagen optimizada
         width: 1200,
         height: 630,
         alt: "Contacto - Carlos Sebastian Calderon Vega",
@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     title: "Contacto | Carlos Sebastian Calderon Vega",
     description:
       "Hablemos sobre tu producto y cómo escalarlo con arquitectura moderna.",
-    images: ["https://www.carlos-calderon.site/logo.png"],
+    images: ["https://carlos-calderon.vercel.app/logo.png"],
   },
   alternates: {
-    canonical: "https://www.carlos-calderon.site/Contacto",
+    canonical: "https://carlos-calderon.vercel.app/Contacto",
   },
 };
 

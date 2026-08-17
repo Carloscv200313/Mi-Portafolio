@@ -85,7 +85,7 @@ export const projects: Project[] = [
   },
   {
     id: "caldex-landing",
-    title: "Caldex Solutions — Landing",
+    title: "Caldex Solutions: Landing",
     client: "Caldex Solutions",
     description:
       "Landing corporativa con animaciones 3D (Spline + react-three-fiber) y scroll suave, optimizada para performance y SEO como puerta de entrada a los productos de Caldex Solutions.",

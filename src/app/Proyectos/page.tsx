@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     title: "Proyectos | Carlos Sebastian Calderon Vega",
     description:
       "Explora proyectos reales de desarrollo web full-stack y mobile con enfoque en performance y escalabilidad.",
-    url: "https://www.carlos-calderon.site/Proyectos",
+    url: "https://carlos-calderon.vercel.app/Proyectos",
     siteName: "Carlos Sebastian Calderon Vega | Portfolio",
     images: [
       {
-        url: "https://www.carlos-calderon.site/icono.png", // crea un banner atractivo (1200x630 recomendado)
+        url: "https://carlos-calderon.vercel.app/icono.png", // crea un banner atractivo (1200x630 recomendado)
         width: 1200,
         height: 630,
         alt: "Portfolio de Carlos Calderón",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://www.carlos-calderon.site/Proyectos",
+    canonical: "https://carlos-calderon.vercel.app/Proyectos",
   },
   icons: {
     icon: "/favicon.ico",

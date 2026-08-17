@@ -90,7 +90,7 @@ export default function MobileSection() {
                     >
                       <Image
                         src={screenshots[index]}
-                        alt={`${t.mobile.appName} — ${t.lightbox.captureLabel} ${index + 1} / ${screenshots.length}`}
+                        alt={`${t.mobile.appName}, ${t.lightbox.captureLabel} ${index + 1} / ${screenshots.length}`}
                         fill
                         className="object-cover"
                         sizes="260px"

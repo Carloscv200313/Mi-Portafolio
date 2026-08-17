@@ -116,6 +116,7 @@
 }
 
 .sm-panel-inner {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -184,8 +185,9 @@
 }
 
 .sm-lang-toggle {
-  margin-top: 2rem;
-  align-self: flex-start;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;

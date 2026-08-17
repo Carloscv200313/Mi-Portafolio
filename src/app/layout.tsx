@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   description: "Ingeniero de software full-stack en Lima, Perú. Diseño arquitectura y construyo SaaS multitenant, POS y sistemas con IA: Next.js, TypeScript, Supabase.",
   keywords: ["Carlos Calderon", "ingeniero de software", "desarrollador full-stack", "Next.js", "TypeScript", "Supabase", "arquitectura de software", "SaaS multitenant", "React", "IA aplicada", "Lima Perú"],
-  metadataBase: new URL('https://www.carlos-calderon.site'),
+  metadataBase: new URL('https://carlos-calderon.vercel.app'),
   publisher: "Carlos Sebastian Calderon Vega",
   creator: "Carlos Sebastian Calderon Vega",
   icons: {
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Carlos Calderón | Ingeniero de Software Full-Stack",
     description: "Diseño arquitectura y construyo SaaS multitenant, POS y sistemas con IA. Casos reales: Kardex360, Grupo Lopar, Arquitectos Salazar.",
-    url: "https://www.carlos-calderon.site",
+    url: "https://carlos-calderon.vercel.app",
     siteName: "Carlos Calderón",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Carlos Calderón — Ingeniero de software full-stack"
+        alt: "Carlos Calderón, Ingeniero de software full-stack"
       }
     ],
     locale: "es_ES",
@@ -84,12 +84,12 @@ export default function RootLayout({
               "name": "Carlos Sebastian Calderon Vega",
               "brand": {
                 "@type": "Brand",
-                "logo": "https://www.carlos-calderon.site/favicon.ico",
+                "logo": "https://carlos-calderon.vercel.app/favicon.ico",
                 "name": "Carlos Calderon Dev"
               },
-              "url": "https://www.carlos-calderon.site",
-              "logo": "https://www.carlos-calderon.site/favicon.ico",
-              "image": "https://www.carlos-calderon.site/favicon.ico",
+              "url": "https://carlos-calderon.vercel.app",
+              "logo": "https://carlos-calderon.vercel.app/favicon.ico",
+              "image": "https://carlos-calderon.vercel.app/favicon.ico",
               "jobTitle": "Ingeniero de Software Full-Stack",
               "description": "Diseño arquitectura de software y construyo sistemas SaaS multitenant, POS y plataformas con integraciones de IA usando Next.js, TypeScript y Supabase.",
               "sameAs": [

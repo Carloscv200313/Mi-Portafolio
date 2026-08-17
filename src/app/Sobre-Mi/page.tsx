@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     title: "Sobre mí | Carlos Sebastian Calderon Vega",
     description:
       "Desarrollador web full-stack y mobile con foco en performance, escalabilidad y despliegues en nube.",
-    url: "https://www.carlos-calderon.site/Sobre-Mi",
+    url: "https://carlos-calderon.vercel.app/Sobre-Mi",
     siteName: "Portfolio de Carlos Sebastian Calderon Vega",
     images: [
       {
-        url: "https://www.carlos-calderon.site/icono.png", // <-- puedes cambiarlo por una imagen tuya real
+        url: "https://carlos-calderon.vercel.app/icono.png", // <-- puedes cambiarlo por una imagen tuya real
         width: 1200,
         height: 630,
         alt: "Sobre mí - Carlos Sebastian Calderon Vega",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "profile",
   },
   alternates: {
-    canonical: "https://www.carlos-calderon.site/Sobre-Mi",
+    canonical: "https://carlos-calderon.vercel.app/Sobre-Mi",
   },
   authors: [{ name: "Carlos Sebastian Calderon Vega" }],
   robots: {

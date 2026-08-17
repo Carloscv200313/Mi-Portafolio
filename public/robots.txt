@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://carlos-calderon.vercel.app
+
+# Sitemaps
+Sitemap: https://carlos-calderon.vercel.app/sitemap.xml

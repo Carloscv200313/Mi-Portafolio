@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Carlos Calderón — Ingeniero de software full-stack";
+export const alt = "Carlos Calderón, Ingeniero de software full-stack";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,7 +30,7 @@ export default async function Image() {
             marginBottom: 28,
           }}
         >
-          Disponible para nuevos proyectos — Lima, Perú
+          Disponible para nuevos proyectos en Lima, Perú
         </div>
         <div
           style={{

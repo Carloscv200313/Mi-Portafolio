@@ -56,7 +56,7 @@ export default function ImageLightbox({
       </button>
 
       <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-white/60">
-        {title} — {index + 1} / {images.length}
+        {title} ({index + 1} / {images.length})
       </p>
 
       <div
@@ -74,7 +74,7 @@ export default function ImageLightbox({
           >
             <Image
               src={images[index]}
-              alt={`${title} — captura ${index + 1} de ${images.length}`}
+              alt={`${title}, captura ${index + 1} de ${images.length}`}
               fill
               sizes="90vw"
               className="object-contain"
