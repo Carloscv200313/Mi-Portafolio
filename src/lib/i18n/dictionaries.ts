@@ -127,8 +127,8 @@ const es: Dictionary = {
     communitySuffix: ", una comunidad universitaria de programación con más de 500 miembros.",
     stacks: [
       { title: "Frontend", items: ["TypeScript, JavaScript ES6+", "React, Next.js (App Router)", "Tailwind CSS, Framer Motion"] },
-      { title: "Backend & datos", items: ["Node.js, Express, Python", "Supabase / PostgreSQL, MySQL, SQL Server", "APIs REST, GraphQL, RLS"] },
-      { title: "Arquitectura & patrones", items: ["Multitenancy, RLS por diseño", "Auth propia, control de acceso por roles", "Modelado de dominio, capas de servicio"] },
+      { title: "Backend & datos", items: ["Node.js, Express, NestJS, Django", "PostgreSQL / Supabase, MySQL, SQL Server", "APIs REST y GraphQL, autenticación JWT, cifrado AES-256"] },
+      { title: "Arquitectura & patrones", items: ["Multitenancy con RLS a nivel de base de datos", "Arquitectura por capas: controlador, servicio, repositorio", "Modelado de dominio y diseño orientado a escalabilidad"] },
       { title: "Herramientas & DevOps", items: ["Git, GitHub Actions", "Docker, Docker Compose", "AWS (EC2, S3, RDS)"] },
     ],
   },
@@ -246,29 +246,29 @@ const es: Dictionary = {
       title: "Kardex360",
       client: "Caldex Solutions",
       description:
-        "Arquitectura SaaS multitenant desde cero para inventario, ventas, compras y reportes. Aislamiento de datos por cliente vía Row Level Security desde la primera migración, capa de IA operativa detrás de un backend propio (sin SQL libre generado por el modelo) y escaneo de códigos de barra. Diseñado para escalar a nuevos tenants sin tocar el esquema.",
+        "Arquitectura SaaS multitenant diseñada desde cero, con separación clara entre dominio, capa de servicio y acceso a datos para inventario, ventas, compras y reportes. Aislamiento de tenants aplicado a nivel de base de datos con Row Level Security como límite de seguridad real, no solo lógico. Capa de IA operativa orquestada por un backend propio que valida y ejecuta acciones sobre el dominio, sin exponer SQL libre al modelo, más escaneo de códigos de barra. Pensado para escalar a nuevos clientes sin migraciones de esquema.",
     },
     "grupo-lopar": {
       title: "Grupo Lopar",
       client: "Grupo Lopar",
       description:
-        "Plataforma de punto de venta y logística que unifica dos operaciones de negocio en un mismo dominio: ventas con niveles de precio y pagos divididos, caja con sesiones y cierre automático, y un módulo de logística con control de tanques, flota, conductores y despachos en tiempo real. Modelo de datos pensado para escalar a más sucursales sin duplicar lógica.",
+        "Backend que modela dos operaciones de negocio distintas, ventas y logística de combustible, bajo un mismo dominio: niveles de precio, pagos divididos y cierre de caja resueltos como lógica de servicio en el backend, no en el cliente. Módulo de logística con control de tanques, flota, conductores y despachos en tiempo real vía suscripciones. Modelo de datos preparado para escalar a más sucursales sin duplicar reglas de negocio.",
     },
     "arquitectos-salazar": {
       title: "Arquitectos Salazar",
       client: "Arquitectos Salazar",
       description:
-        "Sistema de gestión interna con autenticación y control de acceso por roles y permisos diseñado a medida, motor de distribución financiera automático por área de proyecto (propuesta, modelado 3D, planos, render) y trazabilidad de obras, pedidos y finanzas en un mismo modelo de dominio.",
+        "Sistema interno con autenticación y control de acceso por roles y permisos implementado a medida, sin depender de un paquete genérico. Motor de distribución financiera automático que reparte ingresos y costos por área de proyecto (propuesta, modelado 3D, planos, render) según reglas de negocio configurables. Trazabilidad de obras, pedidos y finanzas resuelta con un único modelo de dominio, evitando lógica duplicada entre módulos.",
     },
     caudal: {
       title: "Caudal",
       description:
-        "Sistema de finanzas personales con detección automática de movimientos vía Gmail API (OAuth de solo lectura), tokens cifrados con AES-256-GCM y capa de autenticación propia con bcrypt y JWT. Ingresos, egresos, presupuestos y metas de ahorro sobre un modelo de datos pensado para crecer a multi-cuenta.",
+        "Backend de finanzas personales con detección automática de movimientos vía Gmail API bajo OAuth de solo lectura, y una capa de autenticación propia con bcrypt y JWT en vez de depender de un proveedor externo. Tokens y datos sensibles cifrados en reposo con AES-256-GCM. Ingresos, egresos, presupuestos y metas de ahorro sobre un modelo de datos diseñado para escalar a multi-cuenta sin reescribir la capa de negocio.",
     },
     "mentes-creadoras": {
       title: "Mentes Creadoras",
       description:
-        "Plataforma modular que integra múltiples dominios (tareas, entrenamiento, nutrición con IA) bajo una misma base de datos y capa de autenticación, con panel de administración para monitoreo de usuarios. Pensada para agregar nuevos módulos sin reescribir los existentes.",
+        "Backend modular donde cada dominio (tareas, entrenamiento, nutrición con IA) vive detrás de su propia capa de servicio sobre una base de datos y autenticación compartidas, con panel de administración para monitoreo de usuarios. Arquitectura pensada para agregar módulos nuevos sin tocar los existentes.",
     },
     "amatia-message-center": {
       title: "Amatia Message Center",
@@ -285,12 +285,12 @@ const es: Dictionary = {
     servimach: {
       title: "ServiMach",
       description:
-        "Plataforma para solicitar técnicos especializados con un flujo de registro reforzado por diseño: verificación en tres etapas (código por email, validación de identidad con comparación de imágenes y consulta de antecedentes) para reducir accesos no autorizados.",
+        "Backend con flujo de registro reforzado por diseño para solicitar técnicos especializados: verificación en tres etapas (código por email, validación de identidad con comparación de imágenes y consulta de antecedentes) antes de habilitar una cuenta, reduciendo accesos no autorizados desde el primer punto de entrada.",
     },
     votaciones: {
       title: "Sistema de Votaciones",
       description:
-        "Sistema en tiempo real con WebSocket y CRUD para votación y gestión de bandas, con propagación instantánea de cambios de estado a todos los clientes conectados.",
+        "Backend en tiempo real con WebSocket para votación y gestión de bandas: cada cambio de estado se valida en el servidor y se propaga a todos los clientes conectados sin necesidad de refrescar, con CRUD administrativo para operar el evento.",
     },
   },
   comunidad: {
@@ -364,8 +364,8 @@ const en: Dictionary = {
     communitySuffix: ", a university programming community with 500+ members.",
     stacks: [
       { title: "Frontend", items: ["TypeScript, JavaScript ES6+", "React, Next.js (App Router)", "Tailwind CSS, Framer Motion"] },
-      { title: "Backend & data", items: ["Node.js, Express, Python", "Supabase / PostgreSQL, MySQL, SQL Server", "REST APIs, GraphQL, RLS"] },
-      { title: "Architecture & patterns", items: ["Multitenancy, RLS by design", "Custom auth, role-based access control", "Domain modeling, service layers"] },
+      { title: "Backend & data", items: ["Node.js, Express, NestJS, Django", "PostgreSQL / Supabase, MySQL, SQL Server", "REST & GraphQL APIs, JWT auth, AES-256 encryption"] },
+      { title: "Architecture & patterns", items: ["Multitenancy with database-level RLS", "Layered architecture: controller, service, repository", "Domain modeling and scalability-oriented design"] },
       { title: "Tools & DevOps", items: ["Git, GitHub Actions", "Docker, Docker Compose", "AWS (EC2, S3, RDS)"] },
     ],
   },
@@ -483,29 +483,29 @@ const en: Dictionary = {
       title: "Kardex360",
       client: "Caldex Solutions",
       description:
-        "Multitenant SaaS architecture built from scratch for inventory, sales, purchases and reporting. Per-client data isolation via Row Level Security from the first migration, an AI operations layer behind a private backend (no free-form SQL generated by the model), and barcode scanning. Designed to scale to new tenants without touching the schema.",
+        "Multitenant SaaS architecture designed from scratch, with a clear split between domain, service layer and data access for inventory, sales, purchases and reporting. Tenant isolation enforced at the database level via Row Level Security as a real security boundary, not just application logic. AI operations layer orchestrated by a private backend that validates and executes domain actions, without exposing free-form SQL to the model, plus barcode scanning. Designed to scale to new tenants without schema migrations.",
     },
     "grupo-lopar": {
       title: "Grupo Lopar",
       client: "Grupo Lopar",
       description:
-        "Point-of-sale and logistics platform that unifies two business operations in one domain: sales with pricing tiers and split payments, session-based cash registers with automatic closing, and a logistics module with real-time tank, fleet, driver and dispatch control. Data model designed to scale to more branches without duplicating logic.",
+        "Backend modeling two distinct business operations, sales and fuel logistics, under one domain: pricing tiers, split payments and cash-register closing resolved as service-layer logic, not on the client. Logistics module with real-time tank, fleet, driver and dispatch control via subscriptions. Data model built to scale to more branches without duplicating business rules.",
     },
     "arquitectos-salazar": {
       title: "Arquitectos Salazar",
       client: "Arquitectos Salazar",
       description:
-        "Internal management system with custom-built authentication and role/permission-based access control, an automatic financial distribution engine by project area (proposal, 3D modeling, blueprints, rendering), and traceability of sites, orders and finances in a single domain model.",
+        "Internal system with custom-built authentication and role/permission-based access control, not a generic package. Automatic financial distribution engine that splits income and costs by project area (proposal, 3D modeling, blueprints, rendering) based on configurable business rules. Traceability of sites, orders and finances resolved with a single domain model, avoiding duplicated logic across modules.",
     },
     caudal: {
       title: "Caudal",
       description:
-        "Personal finance system with automatic transaction detection via the Gmail API (read-only OAuth), tokens encrypted with AES-256-GCM, and a custom auth layer with bcrypt and JWT. Income, expenses, budgets and savings goals on a data model designed to grow into multi-account support.",
+        "Personal finance backend with automatic transaction detection via the Gmail API under read-only OAuth, and a custom auth layer with bcrypt and JWT instead of relying on a third-party provider. Sensitive data and tokens encrypted at rest with AES-256-GCM. Income, expenses, budgets and savings goals on a data model designed to scale into multi-account support without rewriting the business layer.",
     },
     "mentes-creadoras": {
       title: "Mentes Creadoras",
       description:
-        "Modular platform integrating multiple domains (tasks, workouts, AI-assisted nutrition) under one shared database and auth layer, with an admin panel for user monitoring. Built to add new modules without rewriting existing ones.",
+        "Modular backend where each domain (tasks, workouts, AI-assisted nutrition) sits behind its own service layer over a shared database and auth, with an admin panel for user monitoring. Architected to add new modules without touching existing ones.",
     },
     "amatia-message-center": {
       title: "Amatia Message Center",
@@ -522,12 +522,12 @@ const en: Dictionary = {
     servimach: {
       title: "ServiMach",
       description:
-        "Platform for requesting specialized technicians with a registration flow reinforced by design: three-stage verification (email code, identity validation via image comparison, and background checks) to reduce unauthorized access.",
+        "Backend with a registration flow reinforced by design for requesting specialized technicians: three-stage verification (email code, identity validation via image comparison, and background checks) before enabling an account, cutting off unauthorized access at the first entry point.",
     },
     votaciones: {
       title: "Voting System",
       description:
-        "Real-time system with WebSocket and CRUD for band voting and management, with instant state propagation to all connected clients.",
+        "Real-time backend with WebSocket for band voting and management: every state change is validated server-side and pushed to all connected clients with no refresh needed, plus an admin CRUD to run the event.",
     },
   },
   comunidad: {
